@@ -73,7 +73,7 @@ getMaps().then(function(){
 	presentConfig.forEach(place => {
 		maps.push({input:endPath+place.file,top:place.y,left:place.x});
 	});
-	var bigPresent = sharp({
+	sharp({
 		create:{
 			width:21248,
 			height:23040,

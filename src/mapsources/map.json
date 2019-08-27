@@ -29,6 +29,21 @@
 			"file":"Present-HyruleField.jpg",
 			"x":7800,
 			"y":8200
+		},
+		{
+			"file":"Present-Market.jpg",
+			"x":10500,
+			"y":6302
+		},
+		{
+			"file":"Future-Market.jpg",
+			"x":12157,
+			"y":6302
+		},
+		{
+			"file":"Present-TempleOfTime.jpg",
+			"x":13614,
+			"y":6602
 		}
 	]
 }
