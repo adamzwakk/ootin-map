@@ -27,29 +27,22 @@ let getMaps = () => {
 		}
 		request(prePath+'index.htm', function (error, response, body) {
 			var dom = JSDOM.fragment(body);
-
 			var ootTable = dom.querySelector("table#table4");
 
 			for (var i = 0, row; row = ootTable.rows[i]; i++) {
+				thisrow:
 				for (var j = 0, col; col = row.cells[j]; j++) {
 					for (var k = 0, el; el = col.children[k]; k++) {
 						if(!el.textContent.includes('(Top)')){
-							break;
+							break thisrow;
 						}
-
-						endname = endPath;
 
 						var filename = el.href;
 						endname = endPath+(filename.replace('LegendOfZelda-OcarinaOfTime-','').replace('(Top)','').replace(/[^A-Za-z0-9.\-]/g, ''));
 
 						if(fs.existsSync(endname)){
 							console.log('Skipping '+endname+' cause already exists');
-							break;
-						}
-
-						if(endname == ''){
-							console.log('Could not determine time for '+filename+', skipping');
-							break;
+							break thisrow;
 						}
 
 						downloadMap(filename,endname).then(
