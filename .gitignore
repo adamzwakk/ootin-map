@@ -1,3 +1,4 @@
 node_modules/
-src/mapsources/present/*.jpg
-src/mapsources/future/*.jpg
+src/mapsources/*.jpg
+src/mapsources/*.jpg
+src/mapfiles/*.png

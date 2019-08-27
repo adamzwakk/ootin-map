@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "leaflet": "^1.5.1",
-    "sharp": "^0.23.0"
+    "sharp": "^0.23.0",
+    "yargs": "^14.0.0"
   },
   "devDependencies": {
     "jsdom": "^15.1.1",

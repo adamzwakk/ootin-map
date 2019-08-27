@@ -1,0 +1,34 @@
+{
+	"data":[
+		{
+			"file":"Future-DesertColossus.jpg",
+			"x":0,
+			"y":0
+		},
+		{
+			"file":"Future-SpiritTemple.jpg",
+			"x":3400,
+			"y":150
+		},
+		{
+			"file":"Future-HauntedWasteland.jpg",
+			"x":0,
+			"y":3000
+		},
+		{
+			"file":"Future-GerudosFortress.jpg",
+			"x":2000,
+			"y":9000
+		},
+		{
+			"file":"Future-GerudoValley.jpg",
+			"x":4500,
+			"y":9000
+		},
+		{
+			"file":"Present-HyruleField.jpg",
+			"x":7800,
+			"y":8200
+		}
+	]
+}
