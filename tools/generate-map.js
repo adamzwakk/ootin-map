@@ -13,7 +13,7 @@ const gridPath = './src/mapfiles/grid/';
 let bgWidth = 23848;
 let bgHeight = 23040;
 let gridDims = 256;
-let zoomLevels = 6;
+let zoomLevels = 8;
 
 let downloadMap = (filename,endname) => {
 	return new Promise((resolve,reject) => {
@@ -94,46 +94,47 @@ let generateBigMap = () => {
 	});
 }
 
-let generateMapGrid = () => {
-	return new Promise((resolve,reject) => {
-		console.log('Done generating Big Map! Generating Map Pieces...');
-		console.log('This will take a while...')
-		let bigFile = sharp(endPresentFile).limitInputPixels(false);
+let generateGridPiece = async function(image,x,y){
+	image.extract({left:x*gridDims,top:y*gridDims,width:gridDims,height:gridDims})
+		.toFile(path+y+'.jpg');
+}
 
-		for (var z = zoomLevels; z >= 0; z--) {
-			if (!fs.existsSync(gridPath+z)){
-			    fs.mkdirSync(gridPath+z);
+let generateMapGrid = async function(){
+	console.log('Done generating Big Map! Generating Map Pieces...');
+	console.log('This will take a while...')
+	let bigFile = sharp(endPresentFile).limitInputPixels(false);
+
+	for (var z = zoomLevels; z >= 0; z--) {
+		if (!fs.existsSync(gridPath+z)){
+		    fs.mkdirSync(gridPath+z);
+		}
+
+		let tWidth = gridDims;
+		let tHeight = gridDims;
+		let pieces = 1;
+
+		if(z > 0){
+			pieces = Math.pow(2,z+1)/2;
+			percent = z/zoomLevels;
+			tWidth = pieces*gridDims;
+			tHeight = pieces*gridDims;
+		}
+		console.log('Starting zoom level '+z+' at '+pieces+'x'+pieces+' ('+tWidth+'x'+tHeight+')');
+
+		let resized = bigFile.clone().resize({width:tWidth,height:tHeight});
+
+		for (var x = 0; x < pieces; x++) {
+			path = gridPath+z+'/'+x+'/';
+
+			if (!fs.existsSync(path)){
+			    fs.mkdirSync(path);
 			}
 
-			let tWidth = gridDims;
-			let tHeight = gridDims;
-			let pieces = 1;
-
-			if(z > 0){
-				pieces = Math.pow(2,z+1)/2;
-				percent = z/zoomLevels;
-				tWidth = pieces*gridDims;
-				tHeight = pieces*gridDims;
-			}
-			console.log('Starting zoom level '+z+' at '+pieces+'x'+pieces+' ('+tWidth+'x'+tHeight+')');
-
-			let resized = bigFile.clone().resize({width:tWidth,height:tHeight});
-
-			for (var x = 0; x < pieces; x++) {
-				path = gridPath+z+'/'+x+'/';
-
-				if (!fs.existsSync(path)){
-				    fs.mkdirSync(path);
-				}
-
-				for (var y = 0; y < pieces; y++) {
-					resized
-						.extract({left:x*gridDims,top:y*gridDims,width:gridDims,height:gridDims})
-						.toFile(path+y+'.jpg');
-				}
+			for (var y = 0; y < pieces; y++) {
+				var gridpiece = await generateGridPiece(resized,x,y);
 			}
 		}
-	});
+	}
 }
 
 getMaps().then(function(){
