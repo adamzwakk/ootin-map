@@ -7,7 +7,7 @@ const argv = require('yargs').argv;
 
 const prePath = 'https://www.vgmaps.com/Atlas/N64/';
 const endPath = './src/mapsources/';
-const endPresentFile = './src/mapfiles/big.png';
+const endPresentFile = './src/mapfiles/big.jpg';
 
 let downloadMap = (filename,endname) => {
 	return new Promise((resolve,reject) => {
@@ -60,23 +60,26 @@ let getMaps = () => {
 
 getMaps().then(function(){
 	console.log('Generating Big Map...');
-	let presentConfig = JSON.parse(fs.readFileSync(endPath+'map.json')).data;
+	let mapLayout = JSON.parse(fs.readFileSync(endPath+'map.json')).layout;
 
 	var maps = []
-	presentConfig.forEach(place => {
-		maps.push({input:endPath+place.file,top:place.y,left:place.x});
+	mapLayout.forEach(place => {
+		let fullpath = endPath+place.file;
+		if(fs.existsSync(fullpath)){
+			console.log('Found file '+fullpath);
+			maps.push({input:fullpath,top:place.y,left:place.x});
+		}
 	});
 	sharp({
 		create:{
-			width:21248,
+			width:23848,
 			height:23040,
 			channels:4,
-			background: { r: 0, g: 0, b: 0, alpha: 1 }
+			background: { r: 0, g: 0, b: 0 }
 		}
 	})
 	.limitInputPixels(false)
 	.composite(maps)
-	.png()
 	.toFile(endPresentFile).then(function(){
 		console.log('Done generating Big Map!');
 	});
