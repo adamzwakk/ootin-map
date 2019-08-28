@@ -10,10 +10,9 @@ const endPath = './src/mapsources/';
 const endPresentFile = './src/mapfiles/big.jpg';
 const gridPath = './src/mapfiles/grid/';
 
-let bgWidth = 23848;
-let bgHeight = 23040;
+let bgSize = 23848;
 let gridDims = 256;
-let zoomLevels = 8;
+let zoomLevels = 7;
 
 let downloadMap = (filename,endname) => {
 	return new Promise((resolve,reject) => {
@@ -80,8 +79,8 @@ let generateBigMap = () => {
 
 		sharp({
 			create:{
-				width:bgWidth,
-				height:bgHeight,
+				width:bgSize,
+				height:bgSize,
 				channels:4,
 				background: { r: 0, g: 0, b: 0 }
 			}

@@ -6,6 +6,9 @@
 	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
 	<style type="text/css">
 		#mapid { width:1920px; height:1080px; }
+		.leaflet-container {
+	    	background: #000;
+		}
 	</style>
 </head>
 <body>
@@ -13,7 +16,8 @@
 
 	 <script type="text/javascript">
 	 	var map = L.map('mapid', {
-	 		maxZoom: 6,
+	 		minZoom:0,
+	 		maxZoom: 7,
   			zoom: 2,
 	 		center: [50,50],
 	 	});
