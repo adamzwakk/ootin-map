@@ -12,6 +12,8 @@ const gridPath = './src/mapfiles/grid/';
 
 let bgWidth = 23848;
 let bgHeight = 23040;
+let gridDims = 256;
+let zoomLevels = 5;
 
 let downloadMap = (filename,endname) => {
 	return new Promise((resolve,reject) => {
@@ -96,29 +98,32 @@ let generateBigMap = () => {
 let generateMapGrid = () => {
 	return new Promise((resolve,reject) => {
 		console.log('Done generating Big Map! Generating Map Pieces...');
-		let gridDims = 256;
-		let wPieces = bgWidth/gridDims;
-		let hPieces = bgHeight/gridDims;
-		let zoomLevels = 1;
+		console.log('This will take a while...')
 		let bigFile = sharp(endPresentFile).limitInputPixels(false);
 
-		for (var z = 0; z < zoomLevels; z++) {
+		for (var z = zoomLevels; z > 0; z--) {
 			if (!fs.existsSync(gridPath+z)){
 			    fs.mkdirSync(gridPath+z);
 			}
+			console.log('Starting zoom level '+z);
+			let percent = z/zoomLevels;			
+
+			let resized = bigFile.clone().resize({width:bgWidth*percent,height:bgHeight*percent})
+			let wPieces = Math.floor((bgWidth*percent)/gridDims);
+			let hPieces = Math.floor((bgHeight*percent)/gridDims);
+
 			for (var x = 0; x < wPieces; x++) {
-				if (!fs.existsSync(gridPath+z+'/'+x)){
-				    fs.mkdirSync(gridPath+z+'/'+x);
+				path = gridPath+z+'/'+x+'/';
+
+				if (!fs.existsSync(path)){
+				    fs.mkdirSync(path);
 				}
+				
 				for (var y = 0; y < hPieces; y++) {
-					path = gridPath+z+'/'+x+'/';
-					try{
-						bigFile
-							.extract({left:x*gridDims,top:y*gridDims,width:gridDims,height:gridDims})
-							.toFile(path+y+'.jpg')
-					} catch(e){
-						// ehh
-					}
+					resized
+						.extract({left:x*gridDims,top:y*gridDims,width:gridDims,height:gridDims})
+						.toFile(path+y+'.jpg');
+					
 				}
 			}
 		}
