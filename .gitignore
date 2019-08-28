@@ -1,5 +1,5 @@
 node_modules/
 src/mapsources/*.jpg
 src/mapsources/*.jpg
-src/mapfiles/*.png
-src/mapfiles/*.jpg
+src/mapfiles/**/*.png
+src/mapfiles/**/*.jpg

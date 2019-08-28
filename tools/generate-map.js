@@ -8,6 +8,10 @@ const argv = require('yargs').argv;
 const prePath = 'https://www.vgmaps.com/Atlas/N64/';
 const endPath = './src/mapsources/';
 const endPresentFile = './src/mapfiles/big.jpg';
+const gridPath = './src/mapfiles/grid/';
+
+let bgWidth = 23848;
+let bgHeight = 23040;
 
 let downloadMap = (filename,endname) => {
 	return new Promise((resolve,reject) => {
@@ -58,29 +62,71 @@ let getMaps = () => {
 	})
 }
 
-getMaps().then(function(){
-	console.log('Generating Big Map...');
-	let mapLayout = JSON.parse(fs.readFileSync(endPath+'map.json')).layout;
+let generateBigMap = () => {
+	return new Promise((resolve,reject) => {
+		console.log('Generating Big Map...');
+		let mapLayout = JSON.parse(fs.readFileSync(endPath+'map.json')).layout;
 
-	var maps = []
-	mapLayout.forEach(place => {
-		let fullpath = endPath+place.file;
-		if(fs.existsSync(fullpath)){
-			console.log('Found file '+fullpath);
-			maps.push({input:fullpath,top:place.y,left:place.x});
+		var maps = []
+		mapLayout.forEach(place => {
+			let fullpath = endPath+place.file;
+			if(fs.existsSync(fullpath)){
+				console.log('Found file '+fullpath);
+				maps.push({input:fullpath,top:place.y,left:place.x});
+			}
+		});
+		
+		sharp({
+			create:{
+				width:bgWidth,
+				height:bgHeight,
+				channels:4,
+				background: { r: 0, g: 0, b: 0 }
+			}
+		})
+		.limitInputPixels(false)
+		.composite(maps)
+		.toFile(endPresentFile).then(function(){
+			resolve(true);	
+		});
+		
+	});
+}
+
+let generateMapGrid = () => {
+	return new Promise((resolve,reject) => {
+		console.log('Done generating Big Map! Generating Map Pieces...');
+		let gridDims = 256;
+		let wPieces = bgWidth/gridDims;
+		let hPieces = bgHeight/gridDims;
+		let zoomLevels = 1;
+		let bigFile = sharp(endPresentFile).limitInputPixels(false);
+
+		for (var z = 0; z < zoomLevels; z++) {
+			if (!fs.existsSync(gridPath+z)){
+			    fs.mkdirSync(gridPath+z);
+			}
+			for (var x = 0; x < wPieces; x++) {
+				if (!fs.existsSync(gridPath+z+'/'+x)){
+				    fs.mkdirSync(gridPath+z+'/'+x);
+				}
+				for (var y = 0; y < hPieces; y++) {
+					path = gridPath+z+'/'+x+'/';
+					try{
+						bigFile
+							.extract({left:x*gridDims,top:y*gridDims,width:gridDims,height:gridDims})
+							.toFile(path+y+'.jpg')
+					} catch(e){
+						// ehh
+					}
+				}
+			}
 		}
 	});
-	sharp({
-		create:{
-			width:23848,
-			height:23040,
-			channels:4,
-			background: { r: 0, g: 0, b: 0 }
-		}
-	})
-	.limitInputPixels(false)
-	.composite(maps)
-	.toFile(endPresentFile).then(function(){
-		console.log('Done generating Big Map!');
+}
+
+getMaps().then(function(){
+	generateBigMap().then(function(){
+		generateMapGrid()
 	});
-})
+});
