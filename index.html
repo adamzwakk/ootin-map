@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>OOTin Map</title>
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
 	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
@@ -38,8 +38,17 @@
 		 	$.getJSON('src/entrances.json',function(data){
 		 		_.each(data.entrances,function(e){
 		 			entrances.push(e);
-		 			L.marker([e.lat, e.lng],{title:e.name}).addTo(map);
+		 			if(typeof e.name == 'undefined'){
+		 				title = e.lat+', '+e.lng;
+		 			} else {
+		 				title = e.name;
+		 			}
+		 			var m = L.marker([e.lat, e.lng],{title:title});
+		 			m.bindPopup(title).openPopup();
+		 			m.addTo(map);
 		 		});
+
+		 		//var polyLine = L.polyline([[data.entrances[0].lat,data.entrances[0].lng],[data.entrances[3].lat,data.entrances[3].lng]],{color:'red'}).addTo(map);
 		 	});
 	 	})
 	 </script>

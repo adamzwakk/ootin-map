@@ -1,33 +1,46 @@
 {
   "entrances": [
     {
-      "name": "Kokiri -> Lost Woods",
+      "name": "Kokiri Forest -> Lost Woods",
       "lat": -65.418684317442,
-      "lng": 40.437011271715
+      "lng": 40.437011271715,
+      "group": "Kokiri Forest"
     },
     {
+      "name": "Kokiri Forest -> Links House",
       "lat": -72.13355486651,
-      "lng": 42.088623046875
+      "lng": 42.088623046875,
+      "group": "Kokiri Forest"
     },
     {
+      "name": "Kokiri Forest -> Saria House",
       "lat": -71.140460265714,
-      "lng": 45.406494140625
+      "lng": 45.406494140625,
+      "group": "Kokiri Forest"
     },
     {
+      "name": "Kokiri Forest -> Know It All House",
       "lat": -70.571239827054,
-      "lng": 35.694580078125
+      "lng": 35.694580078125,
+      "group": "Kokiri Forest"
     },
     {
+      "name": "Kokiri Forest -> Mido House",
       "lat": -68.699165741737,
-      "lng": 39.587402120233
+      "lng": 39.587402120233,
+      "group": "Kokiri Forest"
     },
     {
+      "name": "Kokiri Forest -> Kokiri Shop",
       "lat": -69.11822195151,
-      "lng": 47.530517354608
+      "lng": 47.530517354608,
+      "group": "Kokiri Forest"
     },
     {
+      "name": "Kokiri Forest -> House of Twins",
       "lat": -70.983576839132,
-      "lng": 48.793945088983
+      "lng": 48.793945088983,
+      "group": "Kokiri Forest"
     }
   ]
 }
