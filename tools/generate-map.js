@@ -13,7 +13,7 @@ const gridPath = './src/mapfiles/grid/';
 let bgWidth = 23848;
 let bgHeight = 23040;
 let gridDims = 256;
-let zoomLevels = 5;
+let zoomLevels = 6;
 
 let downloadMap = (filename,endname) => {
 	return new Promise((resolve,reject) => {
@@ -77,7 +77,7 @@ let generateBigMap = () => {
 				maps.push({input:fullpath,top:place.y,left:place.x});
 			}
 		});
-		
+
 		sharp({
 			create:{
 				width:bgWidth,
@@ -89,9 +89,8 @@ let generateBigMap = () => {
 		.limitInputPixels(false)
 		.composite(maps)
 		.toFile(endPresentFile).then(function(){
-			resolve(true);	
+			resolve(true);
 		});
-		
 	});
 }
 
@@ -101,29 +100,36 @@ let generateMapGrid = () => {
 		console.log('This will take a while...')
 		let bigFile = sharp(endPresentFile).limitInputPixels(false);
 
-		for (var z = zoomLevels; z > 0; z--) {
+		for (var z = zoomLevels; z >= 0; z--) {
 			if (!fs.existsSync(gridPath+z)){
 			    fs.mkdirSync(gridPath+z);
 			}
-			console.log('Starting zoom level '+z);
-			let percent = z/zoomLevels;			
 
-			let resized = bigFile.clone().resize({width:bgWidth*percent,height:bgHeight*percent})
-			let wPieces = Math.floor((bgWidth*percent)/gridDims);
-			let hPieces = Math.floor((bgHeight*percent)/gridDims);
+			let tWidth = gridDims;
+			let tHeight = gridDims;
+			let pieces = 1;
 
-			for (var x = 0; x < wPieces; x++) {
+			if(z > 0){
+				pieces = Math.pow(2,z+1)/2;
+				percent = z/zoomLevels;
+				tWidth = pieces*gridDims;
+				tHeight = pieces*gridDims;
+			}
+			console.log('Starting zoom level '+z+' at '+pieces+'x'+pieces+' ('+tWidth+'x'+tHeight+')');
+
+			let resized = bigFile.clone().resize({width:tWidth,height:tHeight});
+
+			for (var x = 0; x < pieces; x++) {
 				path = gridPath+z+'/'+x+'/';
 
 				if (!fs.existsSync(path)){
 				    fs.mkdirSync(path);
 				}
-				
-				for (var y = 0; y < hPieces; y++) {
+
+				for (var y = 0; y < pieces; y++) {
 					resized
 						.extract({left:x*gridDims,top:y*gridDims,width:gridDims,height:gridDims})
 						.toFile(path+y+'.jpg');
-					
 				}
 			}
 		}

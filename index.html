@@ -12,9 +12,12 @@
 	 <div id="mapid"></div>
 
 	 <script type="text/javascript">
-	 	var map = L.map('mapid');
-	 	L.tileLayer('./src/mapfiles/grid/{z}/{x}/{y}.jpg').addTo(map);
-	 	map.setView([52.1, 4], 5);
+	 	var map = L.map('mapid', {
+	 		maxZoom: 5,
+  			zoom: 2,
+	 		center: [50,50],
+	 	});
+	 	L.tileLayer('./src/mapfiles/grid/{z}/{x}/{y}.jpg',{noWrap:true}).addTo(map);
 	 </script>
 </body>
 </html>
