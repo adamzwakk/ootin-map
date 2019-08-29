@@ -1,135 +1,135 @@
 [
     {
-        "name": "Kokiri Forest -> Lost Woods",
+        "from":1,
+        "to":2,
         "lat": -65.418684317442,
-        "lng": 40.437011271715,
-        "group": "Kokiri Forest"
+        "lng": 40.437011271715
     },
     {
-        "name": "Kokiri Forest -> Links House",
+        "from":1,
+        "to":3,
         "lat": -72.13355486651,
-        "lng": 42.088623046875,
-        "group": "Kokiri Forest"
+        "lng": 42.088623046875
     },
     {
-        "name": "Kokiri Forest -> Saria House",
+        "from":1,
+        "to":4,
         "lat": -71.140460265714,
-        "lng": 45.406494140625,
-        "group": "Kokiri Forest"
+        "lng": 45.406494140625
     },
     {
-        "name": "Kokiri Forest -> Know It All House",
+        "from":1,
+        "to":5,
         "lat": -70.571239827054,
-        "lng": 35.694580078125,
-        "group": "Kokiri Forest"
+        "lng": 35.694580078125
     },
     {
-        "name": "Kokiri Forest -> Mido House",
+        "from":1,
+        "to":6,
         "lat": -68.699165741737,
-        "lng": 39.587402120233,
-        "group": "Kokiri Forest"
+        "lng": 39.587402120233
     },
     {
-        "name": "Kokiri Forest -> Kokiri Shop",
+        "from":1,
+        "to":7,
         "lat": -69.11822195151,
-        "lng": 47.530517354608,
-        "group": "Kokiri Forest"
+        "lng": 47.530517354608
     },
     {
-        "name": "Kokiri Forest -> House of Twins",
+        "from":1,
+        "to":8,
         "lat": -70.983576839132,
-        "lng": 48.793945088983,
-        "group": "Kokiri Forest"
+        "lng": 48.793945088983
     },
     {
-        "name": "Kokiri Forest -> Lost Woods Bridge From Forest",
+        "from":1,
+        "to":9,
         "lat": -69.24057767769871,
-        "lng": 32.3876939713955,
-        "group": "Kokiri Forest"
+        "lng": 32.3876939713955
     },
     {
-        "name": "Outside Deku Tree -> Deku Tree Lobby",
+        "from":10,
+        "to":11,
         "lat": -66.94727435155409,
-        "lng": 67.28027343750001,
-        "group": "Kokiri Forest"
+        "lng": 67.28027343750001
     },
     {
-        "name": "Kokiri Forest -> Kokiri Forest Storms Grotto",
+        "from":1,
+        "to":11,
         "lat": -67.08740303551195,
-        "lng": 39.140623211860664,
-        "group": "Kokiri Forest"
+        "lng": 39.140623211860664
     },
     {
-        "name": "Castle Town Entrance -> Castle Town Rupee Room",
+        "from":13,
+        "to":14,
         "lat": 28.304379502199236,
-        "lng": -28.38866919279099,
-        "group": "Castle Town Entrance"
+        "lng": -28.38866919279099
     },
     {
-        "name": "Castle Town Entrance -> Castle Town",
+        "from":13,
+        "to":15,
         "lat": 32.62086905362767,
-        "lng": -29.57519263029099,
-        "group": "Castle Town Entrance"
+        "lng": -29.57519263029099
     },
     {
-        "name": "Castle Town Entrance -> Hyrule Field",
+        "from":13,
+        "to":16,
         "lat": 25.760318546888374,
-        "lng": -29.53124731779099,
-        "group": "Castle Town Entrance"
+        "lng": -29.53124731779099
     },
     {
-        "name": "Castle Town -> Castle Town Entrance",
+        "from":15,
+        "to":13,
         "lat": 34.298068350990825,
-        "lng": -29.49462912976742,
-        "group": "Castle Town"
+        "lng": -29.49462912976742
     },
     {
-        "name": "Castle Town -> Castle Town Treasure Chest Game",
+        "from":15,
+        "to":17,
         "lat": 34.56085936708384,
-        "lng": -32.50488303601742,
-        "group": "Castle Town"
+        "lng": -32.50488303601742
     },
     {
-        "name": "Castle Town -> Castle Town Bombchu Bowling",
+        "from":15,
+        "to":18,
         "lat": 37.82280243352759,
-        "lng": -32.427978739142425,
-        "group": "Castle Town"
+        "lng": -32.427978739142425
     },
     {
-        "name": "Castle Town -> Castle Town Bazaar",
+        "from":15,
+        "to":19,
         "lat": 36.686041276581925,
-        "lng": -26.25366233289242,
-        "group": "Castle Town"
+        "lng": -26.25366233289242
     },
     {
-        "name": "Castle Town -> Castle Town Potion Shop",
+        "from":15,
+        "to":20,
         "lat": 38.39333888832238,
-        "lng": -26.319580301642425,
-        "group": "Castle Town"
+        "lng": -26.319580301642425
     },
     {
-        "name": "Castle Town -> Temple of Time Exterior",
+        "from":15,
+        "to":21,
         "lat": 40.25996600763924,
-        "lng": -23.404540792107586,
-        "group": "Castle Town"
+        "lng": -23.404540792107586
     },
     {
-        "name": "Castle Town -> Castle Town Mask Shop",
+        "from":15,
+        "to":22,
         "lat": 40.552765377422645,
-        "lng": -27.601318135857586,
-        "group": "Castle Town"
+        "lng": -27.601318135857586
     },
     {
-        "name": "Castle Town -> Castle Town Shooting Gallery",
+        "from":15,
+        "to":23,
         "lat": 40.719507088341935,
-        "lng": -31.040038838982586,
-        "group": "Castle Town"
+        "lng": -31.040038838982586
     },
     {
-        "name": "Castle Town -> Castle Grounds",
+        "from":15,
+        "to":24,
         "lat": 41.74945789992366,
-        "lng": -29.556884542107586,
-        "group": "Castle Town"
+        "lng": -29.556884542107586
     },
     {
         "name": "Death Mountain -> Kakariko Village Behind Gate",

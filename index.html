@@ -21,8 +21,13 @@
 
 	 <script type="text/javascript">
 	 	let entrances = [];
+	 	let places = [];
 
 	 	$(document).ready(function(){
+	 		$.ajaxSetup({
+			    async: false
+			});
+
 		 	var map = L.map('mapid', {
 		 		minZoom:0,
 		 		maxZoom: 7,
@@ -38,13 +43,22 @@
 		 	});
 
 		 	function renderEntrances(){
+		 		$.getJSON('./assets/data/places.json',function(data){
+		 			places = data;
+		 		});
 			 	$.getJSON('./assets/data/entrances.json',function(data){
 			 		_.each(data,function(e){
 			 			entrances.push(e);
-			 			if(typeof e.name == 'undefined'){
-			 				title = e.lat+', '+e.lng;
-			 			} else {
-			 				title = e.name;
+			 			if(typeof e.from !== 'undefined'){
+			 				from = _.findWhere(places,{"id":e.from});
+			 				to = _.findWhere(places,{"id":e.to});
+			 				title = from.name+' -> '+to.name+' ('+e.from+' -> '+e.to+')';
+			 			} else {		 			
+				 			if(typeof e.name == 'undefined'){
+				 				title = e.lat+', '+e.lng;
+				 			} else {
+				 				title = e.name;
+				 			}
 			 			}
 			 			var m = L.marker([e.lat, e.lng],{title:title});
 			 			m.bindPopup(title).openPopup();

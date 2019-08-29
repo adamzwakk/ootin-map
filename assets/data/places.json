@@ -1,0 +1,115 @@
+[
+	{
+		"id":1,
+		"name":"Kokiri Forest"
+	},
+	{
+		"id":2,
+		"name":"Lost Woods"
+	},
+	{
+		"id":3,
+		"name":"Links House",
+		"parent":1
+	},
+	{
+		"id":4,
+		"name":"Saria House",
+		"parent":1
+	},
+	{
+		"id":5,
+		"name":"Know It All House",
+		"parent":1
+	},
+	{
+		"id":6,
+		"name":"Mido House",
+		"parent":1
+	},
+	{
+		"id":7,
+		"name":"Kokiri Shop",
+		"parent":1
+	},
+	{
+		"id":8,
+		"name":"House of Twins",
+		"parent":1
+	},
+	{
+		"id":9,
+		"name":"Lost Woods Bridge From Forest",
+		"parent":1
+	},
+	{
+		"id":10,
+		"name":"Outside Deku Tree",
+		"parent":1
+	},
+	{
+		"id":11,
+		"name":"Deku Tree Lobby",
+		"parent":10
+	},
+	{
+		"id":12,
+		"name":"Kokiri Forest Storms Grotto",
+		"parent":1
+	},
+	{
+		"id":13,
+		"name":"Castle Town Entrance"
+	},
+	{
+		"id":14,
+		"name":"Castle Town Rupee Room",
+		"parent":13
+	},
+	{
+		"id":15,
+		"name":"Castle Town"
+	},
+	{
+		"id":16,
+		"name":"Hyrule Field"
+	},
+	{
+		"id":17,
+		"name":"Castle Town Treasure Chest Game",
+		"parent":15
+	},
+	{
+		"id":18,
+		"name":"Castle Town Bombchu Bowling",
+		"parent":15
+	},
+	{
+		"id":19,
+		"name":"Castle Town Bazaar",
+		"parent":15
+	},
+	{
+		"id":20,
+		"name":"Castle Town Potion Shop",
+		"parent":15
+	},
+	{
+		"id":21,
+		"name":"Temple of Time Exterior"
+	},
+	{
+		"id":22,
+		"name":"Castle Town Mask Shop",
+		"parent":15
+	},
+	{
+		"id":23,
+		"name":"Castle Town Shooting Gallery",
+		"parent":15
+	},
+	{
+		"id":24,
+		"name":"Castle Grounds"
+	}
+]
