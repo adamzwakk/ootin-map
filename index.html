@@ -50,9 +50,13 @@
 			 		_.each(data,function(e){
 			 			entrances.push(e);
 			 			if(typeof e.from !== 'undefined'){
-			 				from = _.findWhere(places,{"id":e.from});
-			 				to = _.findWhere(places,{"id":e.to});
-			 				title = from.name+' -> '+to.name+' ('+e.from+' -> '+e.to+')';
+			 				if(typeof e.nick !== 'undefined'){
+			 					title = e.nick+' ('+e.from+' -> '+e.to+')';
+			 				} else {
+				 				from = _.findWhere(places,{"id":e.from});
+				 				to = _.findWhere(places,{"id":e.to});
+				 				title = from.name+' -> '+to.name+' ('+e.from+' -> '+e.to+')';
+			 				}
 			 			} else {		 			
 				 			if(typeof e.name == 'undefined'){
 				 				title = e.lat+', '+e.lng;

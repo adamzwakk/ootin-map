@@ -39,17 +39,14 @@
 	},
 	{
 		"id":9,
-		"name":"Lost Woods Bridge From Forest",
-		"parent":1
+		"name":"Lost Woods Bridge"
 	},
 	{
-		"id":10,
-		"name":"Outside Deku Tree",
-		"parent":1
+		"id":10
 	},
 	{
 		"id":11,
-		"name":"Deku Tree Lobby",
+		"name":"Deku Tree",
 		"parent":10
 	},
 	{
@@ -111,5 +108,426 @@
 	{
 		"id":24,
 		"name":"Castle Grounds"
+	},
+	{
+		"id":25,
+		"name":"Death Mountain"
+	},
+	{
+		"id":26,
+		"name":"Kakariko Village"
+	},
+	{
+		"id":28,
+		"name":"Dodongos Cavern",
+		"parent":25
+	},
+	{
+		"id":29,
+		"name":"Goron City"
+	},
+	{
+		"id":30,
+		"name":"Death Mountain Crater"
+	},
+	{
+		"id":31,
+		"name":"Mountain Storms Grotto",
+		"parent":25
+	},
+	{
+		"id":32,
+		"name":"Mountain Summit Fairy",
+		"parent":25
+	},
+	{
+		"id":33,
+		"name":"Mountain Bombable Grotto",
+		"parent":25
+	},
+	{
+		"id":34,
+		"name":"Fire Temple",
+		"parent":30
+	},
+	{
+		"id":35,
+		"name":"DMC Hammer Grotto",
+		"parent":30
+	},
+	{
+		"id":36,
+		"name":"Crater Fairy",
+		"parent":30
+	},
+	{
+		"id":37,
+		"name":"Top of Crater Grotto",
+		"parent":30
+	},
+	{
+		"id":38,
+		"name":"Desert Colossus"
+	},
+	{
+		"id":39,
+		"name":"Haunted Wasteland"
+	},
+	{
+		"id":40,
+		"name":"Spirit Temple"
+	},
+	{
+		"id":41,
+		"name":"Desert Colossus Grotto",
+		"parent":38
+	},
+	{
+		"id":42,
+		"name":"Colossus Fairy",
+		"parent":38
+	},
+	{
+		"id":43,
+		"name":"Gerudo Fortress"
+	},
+	{
+		"id":44,
+		"name":"Gerudo Valley"
+	},
+	{
+		"id":45,
+		"name":"Gerudo Training Grounds",
+		"parent":43
+	},
+	{
+		"id":46,
+		"name":"Gerudo Fortress Storms Grotto",
+		"parent":43
+	},
+	{
+		"id":47,
+		"name":"Carpenter Tent",
+		"parent":44
+	},
+	{
+		"id":48,
+		"name":"Gerudo Valley Octorok Grotto",
+		"parent":44
+	},
+	{
+		"id":49,
+		"name":"Gerudo Valley Storms Grotto",
+		"parent":44
+	},
+	{
+		"id":50,
+		"name":"Goron Shop",
+		"parent":29
+	},
+	{
+		"id":51,
+		"name":"Goron City Grotto",
+		"parent":29
+	},
+	{
+		"id":52,
+		"name":"Graveyard"
+	},
+	{
+		"id":53,
+		"name":"Shadow Temple",
+		"parent":52
+	},
+	{
+		"id":54,
+		"name":"Composer Grave",
+		"parent":52
+	},
+	{
+		"id":55,
+		"name":"Heart Piece Grave",
+		"parent":52
+	},
+	{
+		"id":56,
+		"name":"Shield Grave",
+		"parent":52
+	},
+	{
+		"id":57,
+		"name":"Dampes Grave",
+		"parent":52
+	},
+	{
+		"id":58,
+		"name":"Dampes House",
+		"parent":52
+	},
+	{
+		"id":59,
+		"name":"Hyrule Castle Fairy",
+		"parent":24
+	},
+	{
+		"id":60,
+		"name":"Castle Storms Grotto",
+		"parent":24
+	},
+	{
+		"id":61,
+		"name":"Ganons Castle Grounds"
+	},
+	{
+		"id":62,
+		"name":"Ganons Castle Fairy"
+	},
+	{
+		"id":63,
+		"name":"Lake Hylia"
+	},
+	{
+		"id":64,
+		"name":"Zora River"
+	},
+	{
+		"id":65,
+		"name":"Lon Lon Ranch"
+	},
+	{
+		"id":66,
+		"name":"Remote Southern Grotto",
+		"parent":16
+	},
+	{
+		"id":67,
+		"name":"Field Near Lake Outside Fence Grotto",
+		"parent":16
+	},
+	{
+		"id":68,
+		"name":"Field Near Lake Inside Fence Grotto",
+		"parent":16
+	},
+	{
+		"id":69,
+		"name":"Field Valley Grotto",
+		"parent":16
+	},
+	{
+		"id":70,
+		"name":"Field North Lon Lon Grotto",
+		"parent":16
+	},
+	{
+		"id":71,
+		"name":"Field Far West Castle Town Grotto",
+		"parent":16
+	},
+	{
+		"id":72,
+		"name":"Field West Castle Town Grotto",
+		"parent":16
+	},
+	{
+		"id":73,
+		"name":"Field Kakariko Grotto",
+		"parent":16
+	},
+	{
+		"id":74,
+		"name":"Impas House",
+		"parent":26
+	},
+	{
+		"id":75,
+		"name":"Impas House Back",
+		"parent":26
+	}
+	,
+	{
+		"id":76,
+		"name":"Windmill",
+		"parent":26
+	},
+	{
+		"id":77,
+		"name":"Carpenter Boss House",
+		"parent":26
+	},
+	{
+		"id":78,
+		"name":"House of Skulltula",
+		"parent":26
+	},
+	{
+		"id":79,
+		"name":"Kakariko Potion Shop",
+		"parent":26
+	},
+	{
+		"id":80,
+		"name":"Kakariko Bazaar",
+		"parent":26
+	},
+	{
+		"id":81,
+		"name":"Kakariko Shooting Gallery",
+		"parent":26
+	},
+	{
+		"id":82,
+		"name":"Odd Medicine Building",
+		"parent":26
+	},
+	{
+		"id":83,
+		"name":"Bottom of the Well",
+		"parent":26
+	},
+	{
+		"id":84,
+		"name":"Kakariko Bombable Grotto",
+		"parent":26
+	},
+	{
+		"id":85,
+		"name":"Kakariko Back Grotto",
+		"parent":26
+	},
+	{
+		"id":86,
+		"name":"Zoras Domain"
+	},
+	{
+		"id":87,
+		"name":"Lake Hylia Lab",
+		"parent":63
+	},
+	{
+		"id":88,
+		"name":"Fishing Hole",
+		"parent":63
+	},
+	{
+		"id":89,
+		"name":"Water Temple",
+		"parent":63
+	},
+	{
+		"id":90,
+		"name":"Lake Hylia Grotto",
+		"parent":63
+	},
+	{
+		"id":91,
+		"name":"Talon House",
+		"parent":65
+	},
+	{
+		"id":92,
+		"name":"Ingo Barn",
+		"parent":65
+	},
+	{
+		"id":93,
+		"name":"Lon Lon Corner Tower",
+		"parent":65
+	},
+	{
+		"id":94,
+		"name":"Lon Lon Grotto",
+		"parent":65
+	},
+	{
+		"id":95,
+		"name":"Sacred Forest Meadow"
+	},
+	{
+		"id":96,
+		"name":"Deku Theater",
+		"parent":2
+	},
+	{
+		"id":97,
+		"name":"Lost Woods Generic Grotto",
+		"parent":2
+	},
+	{
+		"id":98,
+		"name":"Lost Woods Sales Grotto",
+		"parent":2
+	},
+	{
+		"id":99,
+		"name":"Forest Temple",
+		"parent":95
+	},
+	{
+		"id":100,
+		"name":"Front of Meadow Grotto",
+		"parent":95
+	},
+	{
+		"id":101,
+		"name":"Meadow Fairy Grotto",
+		"parent":95
+	},
+	{
+		"id":102,
+		"name":"Meadow Storms Grotto",
+		"parent":95
+	},
+	{
+		"id":103,
+		"name":"Temple of Time Exterior"
+	},
+	{
+		"id":104,
+		"name":"Temple of Time"
+	},
+	{
+		"id":105,
+		"name":"Zoras Fountain"
+	},
+	{
+		"id":106,
+		"name":"Zora Shop",
+		"parent":86
+	},
+	{
+		"id":107,
+		"name":"Zoras Domain Storms Grotto",
+		"parent":86
+	},
+	{
+		"id":108,
+		"name":"Jabu Jabus Belly",
+		"parent":105
+	},
+	{
+		"id":109,
+		"name":"Ice Cavern",
+		"parent":105
+	},
+	{
+		"id":110,
+		"name":"Zoras Fountain Fairy",
+		"parent":105
+	},
+	{
+		"id":111,
+		"name":"Zora River Storms Grotto",
+		"parent":64
+	},
+	{
+		"id":112,
+		"name":"Zora River Plateau Open Grotto",
+		"parent":64
+	},
+	{
+		"id":113,
+		"name":"Zora River Plateau Bombable Grotto",
+		"parent":64
 	}
 ]
