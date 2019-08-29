@@ -1,0 +1,64 @@
+html
+	head
+		link(rel='stylesheet', href='./css/leaflet.css')
+		script(src='./js/leaflet.js')
+		script(src='./js/underscore-min.js')
+		script(src='./js/jquery.min.js')
+
+		style.
+			#mapid { width:1920px; height:1080px; }
+			.leaflet-container {
+				background: #000;
+			}
+	body
+		div(id='mapid')
+		script.
+			let entrances = !{entrances};
+			let places = !{places};
+
+			$(document).ready(function(){
+				$.ajaxSetup({
+				    async: false
+				});
+
+			 	var map = L.map('mapid', {
+			 		minZoom:0,
+			 		maxZoom: 7,
+					zoom: 2,
+			 		center: [50,50],
+			 	});
+			 	L.tileLayer('./images/grid/{z}/{x}/{y}.jpg',{noWrap:true}).addTo(map);
+
+			 	
+			 	map.on('click',function(e){
+			 		entrances.push(e.latlng);
+			 		console.log(JSON.stringify(entrances));
+			 	});
+
+			 	function renderEntrances(){
+				 	_.each(entrances,function(e){
+			 			if(typeof e.from !== 'undefined'){
+			 				if(typeof e.nick !== 'undefined'){
+			 					title = e.nick+' ('+e.from+' -> '+e.to+')';
+			 				} else {
+				 				from = _.findWhere(places,{"id":e.from});
+				 				to = _.findWhere(places,{"id":e.to});
+				 				title = from.name+' -> '+to.name+' ('+e.from+' -> '+e.to+')';
+			 				}
+			 			} else {		 			
+				 			if(typeof e.name == 'undefined'){
+				 				title = e.lat+', '+e.lng;
+				 			} else {
+				 				title = e.name;
+				 			}
+			 			}
+			 			var m = L.marker([e.lat, e.lng],{title:title});
+			 			m.bindPopup(title).openPopup();
+			 			m.addTo(map);
+			 		});
+
+			 		//var polyLine = L.polyline([[data.entrances[0].lat,data.entrances[0].lng],[data.entrances[3].lat,data.entrances[3].lng]],{color:'red'}).addTo(map);
+			 	}
+
+			 	renderEntrances();
+			})

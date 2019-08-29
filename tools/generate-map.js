@@ -66,7 +66,7 @@ let getMaps = () => {
 let generateBigMap = () => {
 	return new Promise((resolve,reject) => {
 		console.log('Generating Big Map...');
-		let mapLayout = JSON.parse(fs.readFileSync('./assets/data/map.json')).layout;
+		let mapLayout = JSON.parse(fs.readFileSync('./data/map.json')).layout;
 
 		var maps = []
 		mapLayout.forEach(place => {

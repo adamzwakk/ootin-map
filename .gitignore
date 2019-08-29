@@ -3,3 +3,7 @@ assets/mapsources/*.jpg
 assets/mapsources/*.jpg
 assets/mapfiles/**/*.png
 assets/mapfiles/**/*.jpg
+public/images/grid/**/*.jpg
+public/js/*.js
+public/css/*.css
+public/css/images/*.png
