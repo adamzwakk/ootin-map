@@ -8,10 +8,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'pug')
 
 console.log("Starting up OOTin Map!")
-var places = fs.readFileSync('./data/places.json','utf8');
-var entrances = fs.readFileSync('./data/entrances.json','utf8');
+
 
 app.get('/', (req, res) => {
+	var places = fs.readFileSync('./data/places.json','utf8');
+	var entrances = fs.readFileSync('./data/entrances.json','utf8');
+	
 	return res.render('index',{places:places,entrances:entrances});
 });
 

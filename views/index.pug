@@ -31,8 +31,7 @@ html
 
 			 	
 			 	map.on('click',function(e){
-			 		entrances.push(e.latlng);
-			 		console.log(JSON.stringify(entrances));
+			 		console.log(JSON.stringify(e.latlng));
 			 	});
 
 			 	function renderEntrances(){
