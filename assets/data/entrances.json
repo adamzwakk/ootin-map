@@ -1,0 +1,224 @@
+[
+    {
+        "name": "Kokiri Forest -> Lost Woods",
+        "lat": -65.418684317442,
+        "lng": 40.437011271715,
+        "group": "Kokiri Forest"
+    },
+    {
+        "name": "Kokiri Forest -> Links House",
+        "lat": -72.13355486651,
+        "lng": 42.088623046875,
+        "group": "Kokiri Forest"
+    },
+    {
+        "name": "Kokiri Forest -> Saria House",
+        "lat": -71.140460265714,
+        "lng": 45.406494140625,
+        "group": "Kokiri Forest"
+    },
+    {
+        "name": "Kokiri Forest -> Know It All House",
+        "lat": -70.571239827054,
+        "lng": 35.694580078125,
+        "group": "Kokiri Forest"
+    },
+    {
+        "name": "Kokiri Forest -> Mido House",
+        "lat": -68.699165741737,
+        "lng": 39.587402120233,
+        "group": "Kokiri Forest"
+    },
+    {
+        "name": "Kokiri Forest -> Kokiri Shop",
+        "lat": -69.11822195151,
+        "lng": 47.530517354608,
+        "group": "Kokiri Forest"
+    },
+    {
+        "name": "Kokiri Forest -> House of Twins",
+        "lat": -70.983576839132,
+        "lng": 48.793945088983,
+        "group": "Kokiri Forest"
+    },
+    {
+        "name": "Castle Town Entrance -> Castle Town Rupee Room",
+        "lat": 28.304379502199236,
+        "lng": -28.38866919279099,
+        "group": "Castle Town Entrance"
+    },
+    {
+        "name": "Castle Town Entrance -> Castle Town",
+        "lat": 32.62086905362767,
+        "lng": -29.57519263029099,
+        "group": "Castle Town Entrance"
+    },
+    {
+        "name": "Castle Town Entrance -> Hyrule Field",
+        "lat": 25.760318546888374,
+        "lng": -29.53124731779099,
+        "group": "Castle Town Entrance"
+    },
+    {
+        "name": "Castle Town -> Castle Town Entrance",
+        "lat": 34.298068350990825,
+        "lng": -29.49462912976742,
+        "group": "Castle Town"
+    },
+    {
+        "name": "Castle Town -> Castle Town Treasure Chest Game",
+        "lat": 34.56085936708384,
+        "lng": -32.50488303601742,
+        "group": "Castle Town"
+    },
+    {
+        "name": "Castle Town -> Castle Town Bombchu Bowling",
+        "lat": 37.82280243352759,
+        "lng": -32.427978739142425,
+        "group": "Castle Town"
+    },
+    {
+        "name": "Castle Town -> Castle Town Bazaar",
+        "lat": 36.686041276581925,
+        "lng": -26.25366233289242,
+        "group": "Castle Town"
+    },
+    {
+        "name": "Castle Town -> Castle Town Potion Shop",
+        "lat": 38.39333888832238,
+        "lng": -26.319580301642425,
+        "group": "Castle Town"
+    },
+    {
+        "name": "Castle Town -> Temple of Time Exterior",
+        "lat": 40.25996600763924,
+        "lng": -23.404540792107586,
+        "group": "Castle Town"
+    },
+    {
+        "name": "Castle Town -> Castle Town Mask Shop",
+        "lat": 40.552765377422645,
+        "lng": -27.601318135857586,
+        "group": "Castle Town"
+    },
+    {
+        "name": "Castle Town -> Castle Town Shooting Gallery",
+        "lat": 40.719507088341935,
+        "lng": -31.040038838982586,
+        "group": "Castle Town"
+    },
+    {
+        "name": "Castle Town -> Castle Grounds",
+        "lat": 41.74945789992366,
+        "lng": -29.556884542107586,
+        "group": "Castle Town"
+    },
+    {
+        "name": "Death Mountain -> Kakariko Village Behind Gate",
+        "lat": 25.27119031033909,
+        "lng": 58.22753906250001,
+        "group": "Death Mountain"
+    },
+    {
+        "name": "Dodongos Cavern Entryway -> Dodongos Cavern Beginning",
+        "lat": 42.28272638998756,
+        "lng": 55.63476562500001,
+        "group": "Death Mountain"
+    },
+    {
+        "name": "Death Mountain -> Goron City",
+        "lat": 47.38843157074533,
+        "lng": 77.56347656250001,
+        "group": "Death Mountain"
+    },
+    {
+        "name": "Death Mountain Summit -> Death Mountain Crater Upper Local",
+        "lat": 62.674143038873595,
+        "lng": 70.78125089406969,
+        "group": "Death Mountain"
+    },
+    {
+        "name": "Death Mountain Summit Owl Flight -> Kakariko Impa Ledge",
+        "lat": 56.29215631294792,
+        "lng": 66.21093839406969,
+        "group": "Death Mountain"
+    },
+    {
+        "name": "Death Mountain -> Mountain Storms Grotto",
+        "lat": 42.34771854174836,
+        "lng": 77.71728515625001,
+        "group": "Death Mountain"
+    },
+    {
+        "name": "Death Mountain Summit -> Mountain Summit Fairy",
+        "lat": 40.5917086825919,
+        "lng": 61.74316406250001,
+        "group": "Death Mountain"
+    },
+    {
+        "name": "Death Mountain Summit -> Mountain Bombable Grotto",
+        "lat": 57.2671633902445,
+        "lng": 64.58496049046516,
+        "group": "Death Mountain"
+    },
+    {
+        "name": "Death Mountain Crater Lower Nearby -> Darunias Chamber",
+        "lat": 75.62681431741038,
+        "lng": 81.60644531250001,
+        "group": "Death Mountain Crater"
+    },
+    {
+        "name": "Fire Temple Entrance -> Fire Temple Lower",
+        "lat": 78.20057389311837,
+        "lng": 93.58886808156969,
+        "group": "Death Mountain Crater"
+    },
+    {
+        "name": "Death Mountain Crater Lower Nearby -> DMC Hammer Grotto",
+        "lat": 76.43803896927753,
+        "lng": 83.15918013453484,
+        "group": "Death Mountain Crater"
+    },
+    {
+        "name": "Death Mountain Crater Lower Nearby -> Crater Fairy",
+        "lat": 74.1080265488757,
+        "lng": 84.20654520392418,
+        "group": "Death Mountain Crater"
+    },
+    {
+        "name": "Death Mountain Crater Upper Nearby -> Death Mountain Summit",
+        "lat": 72.13243116269174,
+        "lng": 85.70068582892418,
+        "group": "Death Mountain Crater"
+    },
+    {
+        "name": "Death Mountain Crater Upper Nearby -> Top of Crater Grotto",
+        "lat": 72.85929818952378,
+        "lng": 93.72070536017418,
+        "group": "Death Mountain Crater"
+    },
+    {
+        "name": "Desert Colossus -> Haunted Wasteland Near Colossus",
+        "lat": 77.9737975850152,
+        "lng": -136.23047143220904,
+        "group": "Desert Colossus"
+    },
+    {
+        "name": "Desert Colossus -> Spirit Temple Lobby",
+        "lat": 77.72405489845151,
+        "lng": -168.75000268220901,
+        "group": "Desert Colossus"
+    },
+    {
+        "name": "Desert Colossus -> Desert Colossus Grotto",
+        "lat": 79.31351049127646,
+        "lng": -160.22461205720907,
+        "group": "Desert Colossus"
+    },
+    {
+        "name": "Desert Colossus -> Colossus Fairy",
+        "lat": 79.57115798335022,
+        "lng": -146.95312768220901,
+        "group": "Desert Colossus"
+    }
+]

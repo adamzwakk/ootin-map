@@ -20,6 +20,8 @@
 	 <div id="mapid"></div>
 
 	 <script type="text/javascript">
+	 	let entrances = [];
+
 	 	$(document).ready(function(){
 		 	var map = L.map('mapid', {
 		 		minZoom:0,
@@ -27,29 +29,33 @@
 	  			zoom: 2,
 		 		center: [50,50],
 		 	});
-		 	L.tileLayer('./src/mapfiles/grid/{z}/{x}/{y}.jpg',{noWrap:true}).addTo(map);
+		 	L.tileLayer('./assets/mapfiles/grid/{z}/{x}/{y}.jpg',{noWrap:true}).addTo(map);
 
-		 	let entrances = [];
+		 	
 		 	map.on('click',function(e){
 		 		entrances.push(e.latlng);
 		 		console.log(JSON.stringify(entrances));
 		 	});
 
-		 	$.getJSON('src/entrances.json',function(data){
-		 		_.each(data.entrances,function(e){
-		 			entrances.push(e);
-		 			if(typeof e.name == 'undefined'){
-		 				title = e.lat+', '+e.lng;
-		 			} else {
-		 				title = e.name;
-		 			}
-		 			var m = L.marker([e.lat, e.lng],{title:title});
-		 			m.bindPopup(title).openPopup();
-		 			m.addTo(map);
-		 		});
+		 	function renderEntrances(){
+			 	$.getJSON('./assets/data/entrances.json',function(data){
+			 		_.each(data,function(e){
+			 			entrances.push(e);
+			 			if(typeof e.name == 'undefined'){
+			 				title = e.lat+', '+e.lng;
+			 			} else {
+			 				title = e.name;
+			 			}
+			 			var m = L.marker([e.lat, e.lng],{title:title});
+			 			m.bindPopup(title).openPopup();
+			 			m.addTo(map);
+			 		});
 
-		 		//var polyLine = L.polyline([[data.entrances[0].lat,data.entrances[0].lng],[data.entrances[3].lat,data.entrances[3].lng]],{color:'red'}).addTo(map);
-		 	});
+			 		//var polyLine = L.polyline([[data.entrances[0].lat,data.entrances[0].lng],[data.entrances[3].lat,data.entrances[3].lng]],{color:'red'}).addTo(map);
+			 	});
+		 	}
+
+		 	renderEntrances();
 	 	})
 	 </script>
 </body>

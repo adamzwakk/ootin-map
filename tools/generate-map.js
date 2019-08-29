@@ -6,9 +6,9 @@ const sharp = require('sharp');
 const argv = require('yargs').argv;
 
 const prePath = 'https://www.vgmaps.com/Atlas/N64/';
-const endPath = './src/mapsources/';
-const endPresentFile = './src/mapfiles/big.jpg';
-const gridPath = './src/mapfiles/grid/';
+const endPath = './assets/mapsources/';
+const endPresentFile = './assets/mapfiles/big.jpg';
+const gridPath = './assets/mapfiles/grid/';
 
 let bgSize = 23848;
 let gridDims = 256;
@@ -66,7 +66,7 @@ let getMaps = () => {
 let generateBigMap = () => {
 	return new Promise((resolve,reject) => {
 		console.log('Generating Big Map...');
-		let mapLayout = JSON.parse(fs.readFileSync(endPath+'map.json')).layout;
+		let mapLayout = JSON.parse(fs.readFileSync('./assets/data/map.json')).layout;
 
 		var maps = []
 		mapLayout.forEach(place => {
