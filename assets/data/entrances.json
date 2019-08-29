@@ -42,6 +42,24 @@
         "group": "Kokiri Forest"
     },
     {
+        "name": "Kokiri Forest -> Lost Woods Bridge From Forest",
+        "lat": -69.24057767769871,
+        "lng": 32.3876939713955,
+        "group": "Kokiri Forest"
+    },
+    {
+        "name": "Outside Deku Tree -> Deku Tree Lobby",
+        "lat": -66.94727435155409,
+        "lng": 67.28027343750001,
+        "group": "Kokiri Forest"
+    },
+    {
+        "name": "Kokiri Forest -> Kokiri Forest Storms Grotto",
+        "lat": -67.08740303551195,
+        "lng": 39.140623211860664,
+        "group": "Kokiri Forest"
+    },
+    {
         "name": "Castle Town Entrance -> Castle Town Rupee Room",
         "lat": 28.304379502199236,
         "lng": -28.38866919279099,
@@ -382,5 +400,449 @@
         "lat": 63.62674583623621,
         "lng": 23.49609732627869,
         "group": "Castle Grounds"
+    },
+    {
+        "name": "Hyrule Field -> Lost Woods Bridge",
+        "lat": -30.511793713677058,
+        "lng": 36.54785111546517,
+        "group": "Hyrule Field"
+    },
+    {
+        "name": "Hyrule Field -> Lake Hylia",
+        "lat": -58.965116641939645,
+        "lng": -30.483399331569675,
+        "group": "Hyrule Field"
+    },
+    {
+        "name": "Hyrule Field -> Gerudo Valley",
+        "lat": -25.085600718972767,
+        "lng": -52.29492187500001,
+        "group": "Hyrule Field"
+    },
+    {
+        "name": "Hyrule Field -> Castle Town Entrance",
+        "lat": 16.327167355253323,
+        "lng": 5.0830087065696725,
+        "group": "Hyrule Field"
+    },
+    {
+        "name": "Hyrule Field -> Kakariko Village",
+        "lat": 17.755661057801436,
+        "lng": 29.384766519069675,
+        "group": "Hyrule Field"
+    },
+    {
+        "name": "Hyrule Field -> Zora River Front",
+        "lat": -2.4162749847503147,
+        "lng": 44.399418532848365,
+        "group": "Hyrule Field"
+    },
+    {
+        "name": "Hyrule Field -> Lon Lon Ranch",
+        "lat": -17.09879159676537,
+        "lng": -7.412104904651643,
+        "group": "Hyrule Field"
+    },
+    {
+        "name": "Hyrule Field -> Remote Southern Grotto",
+        "lat": -48.613542533985004,
+        "lng": 3.40576171875,
+        "group": "Hyrule Field"
+    },
+    {
+        "name": "Hyrule Field -> Field Near Lake Outside Fence Grotto",
+        "lat": -54.32079502575801,
+        "lng": -19.555664062500004,
+        "group": "Hyrule Field"
+    },
+    {
+        "name": "Hyrule Field -> Field Near Lake Inside Fence Grotto",
+        "lat": -54.11523604456663,
+        "lng": -25.224609375000004,
+        "group": "Hyrule Field"
+    },
+    {
+        "name": "Hyrule Field -> Field Valley Grotto",
+        "lat": -22.085639280301248,
+        "lng": -43.00781205296518,
+        "group": "Hyrule Field"
+    },
+    {
+        "name": "Hyrule Field -> Field North Lon Lon Grotto",
+        "lat": 2.694319394361455,
+        "lng": -25.34179911017418,
+        "group": "Hyrule Field"
+    },
+    {
+        "name": "Hyrule Field -> Field Far West Castle Town Grotto",
+        "lat": 21.630197322665587,
+        "lng": -22.089845985174183,
+        "group": "Hyrule Field"
+    },
+    {
+        "name": "Hyrule Field -> Field West Castle Town Grotto",
+        "lat": 14.448866218314647,
+        "lng": -3.6767600476741795,
+        "group": "Hyrule Field"
+    },
+    {
+        "name": "Hyrule Field -> Field Kakariko Grotto",
+        "lat": 19.58739358113432,
+        "lng": 17.88573816418648,
+        "group": "Hyrule Field"
+    },
+    {
+        "name": "Kakariko Village -> Hyrule Field",
+        "lat": 1.903946822181147,
+        "lng": 55.97167924046517,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Kakariko Village -> Graveyard",
+        "lat": 0.10986321392741416,
+        "lng": 87.45117187500001,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Kakariko Village Behind Gate -> Death Mountain",
+        "lat": 17.867233029985197,
+        "lng": 73.76953214406969,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Kakariko Village -> Impas House",
+        "lat": -1.8966264079951944,
+        "lng": 72.07763761281969,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Kakariko Impa Ledge -> Impas House Back",
+        "lat": -1.9405470840187222,
+        "lng": 75.52734464406969,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Kakariko Village -> Windmill",
+        "lat": 5.127419542854322,
+        "lng": 81.41601651906969,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Kakariko Village -> Carpenter Boss House",
+        "lat": 7.006398237005511,
+        "lng": 73.92334073781969,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Kakariko Village -> House of Skulltula",
+        "lat": 2.145494292956249,
+        "lng": 72.23144620656969,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Kakariko Village -> Kakariko Potion Shop Front",
+        "lat": 11.788494691598325,
+        "lng": 75.01464843750001,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Kakariko Village -> Kakariko Bazaar",
+        "lat": 12.218338163461627,
+        "lng": 72.77343750000001,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Kakariko Village -> Kakariko Shooting Gallery",
+        "lat": 3.476867622697726,
+        "lng": 75.62988281250001,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Kakariko Village Backyard -> Kakariko Potion Shop Back",
+        "lat": 11.982009055478972,
+        "lng": 77.60742187500001,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Kakariko Village Backyard -> Odd Medicine Building",
+        "lat": 8.131741490853265,
+        "lng": 78.75000000000001,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Kakariko Village -> Bottom of the Well",
+        "lat": 5.14200897385821,
+        "lng": 78.88183593750001,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Kakariko Village -> Kakariko Bombable Grotto",
+        "lat": 5.798183162558391,
+        "lng": 71.96044921875001,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Kakariko Village Backyard -> Kakariko Back Grotto",
+        "lat": 9.91113596707142,
+        "lng": 79.40917968750001,
+        "group": "Kakariko Village"
+    },
+    {
+        "name": "Lake Hylia -> Hyrule Field",
+        "lat": -67.88105775264518,
+        "lng": -49.52636718750001,
+        "group": "Lake Hylia"
+    },
+    {
+        "name": "Lake Hylia -> Zoras Domain",
+        "lat": -74.26371178542018,
+        "lng": -43.8134765625,
+        "group": "Lake Hylia"
+    },
+    {
+        "name": "Lake Hylia Owl Flight -> Hyrule Field",
+        "lat": -78.10735546198414,
+        "lng": -57.202146649360664,
+        "group": "Lake Hylia"
+    },
+    {
+        "name": "Lake Hylia -> Lake Hylia Lab",
+        "lat": -74.98218287803495,
+        "lng": -52.990721762180335,
+        "group": "Lake Hylia"
+    },
+    {
+        "name": "Lake Hylia -> Fishing Hole",
+        "lat": -75.02198604327204,
+        "lng": -30.227049887180332,
+        "group": "Lake Hylia"
+    },
+    {
+        "name": "Lake Hylia -> Water Temple Lobby",
+        "lat": -78.52921460931516,
+        "lng": -43.97094637155533,
+        "group": "Lake Hylia"
+    },
+    {
+        "name": "Lake Hylia -> Lake Hylia Grotto",
+        "lat": -78.12545438656194,
+        "lng": -56.770017296075835,
+        "group": "Lake Hylia"
+    },
+    {
+        "name": "Lon Lon Ranch -> Hyrule Field",
+        "lat": -64.26368374017731,
+        "lng": 11.39648884534836,
+        "group": "Lon Lon Ranch"
+    },
+    {
+        "name": "Lon Lon Ranch -> Talon House",
+        "lat": -65.89866233786749,
+        "lng": 9.023439288139345,
+        "group": "Lon Lon Ranch"
+    },
+    {
+        "name": "Lon Lon Ranch -> Ingo Barn",
+        "lat": -66.44017878573668,
+        "lng": 7.419435381889344,
+        "group": "Lon Lon Ranch"
+    },
+    {
+        "name": "Lon Lon Ranch -> Lon Lon Corner Tower",
+        "lat": -75.06734898853097,
+        "lng": -6.459958255290985,
+        "group": "Lon Lon Ranch"
+    },
+    {
+        "name": "Lon Lon Ranch -> Lon Lon Grotto",
+        "lat": -75.07866877353803,
+        "lng": 13.820803463459017,
+        "group": "Lon Lon Ranch"
+    },
+    {
+        "name": "Lost Woods Forest Exit -> Kokiri Forest",
+        "lat": -75.52281351795197,
+        "lng": 82.44140759110451,
+        "group": "Lost Woods"
+    },
+    {
+        "name": "Lost Woods -> Goron City Woods Warp",
+        "lat": -73.04396450106454,
+        "lng": 87.31201216578484,
+        "group": "Lost Woods"
+    },
+    {
+        "name": "Lost Woods -> Zora River",
+        "lat": -73.56781073195387,
+        "lng": 96.40869185328486,
+        "group": "Lost Woods"
+    },
+    {
+        "name": "Lost Woods Beyond Mido -> Sacred Forest Meadow Entryway",
+        "lat": -70.00306138394413,
+        "lng": 87.23144531250001,
+        "group": "Lost Woods"
+    },
+    {
+        "name": "Lost Woods Beyond Mido -> Deku Theater",
+        "lat": -72.23104342528062,
+        "lng": 83.04199174046518,
+        "group": "Lost Woods"
+    },
+    {
+        "name": "Lost Woods -> Lost Woods Generic Grotto",
+        "lat": -73.44930005305119,
+        "lng": 87.91992142796518,
+        "group": "Lost Woods"
+    },
+    {
+        "name": "Lost Woods Beyond Mido -> Lost Woods Sales Grotto",
+        "lat": -70.44660592407702,
+        "lng": 86.46972611546518,
+        "group": "Lost Woods"
+    },
+    {
+        "name": "Lost Woods Bridge -> Hyrule Field",
+        "lat": -77.31091129575238,
+        "lng": 73.12500134110451,
+        "group": "Lost Woods"
+    },
+    {
+        "name": "Lost Woods Bridge -> Kokiri Forest",
+        "lat": -77.31573691592149,
+        "lng": 76.90429821610451,
+        "group": "Lost Woods"
+    },
+    {
+        "name": "Sacred Forest Meadow Entryway -> Lost Woods Beyond Mido",
+        "lat": -80.35944881158255,
+        "lng": 105.68115413188934,
+        "group": "Sacred Forest Meadow"
+    },
+    {
+        "name": "Sacred Forest Meadow -> Forest Temple Lobby",
+        "lat": -72.76189430622868,
+        "lng": 106.93359419703484,
+        "group": "Sacred Forest Meadow"
+    },
+    {
+        "name": "Sacred Forest Meadow Entryway -> Front of Meadow Grotto",
+        "lat": -79.91413651124026,
+        "lng": 105.80566361546518,
+        "group": "Sacred Forest Meadow"
+    },
+    {
+        "name": "Sacred Forest Meadow -> Meadow Fairy Grotto",
+        "lat": -77.97684915090892,
+        "lng": 107.14599564671518,
+        "group": "Sacred Forest Meadow"
+    },
+    {
+        "name": "Sacred Forest Meadow -> Meadow Storms Grotto",
+        "lat": -74.33308611807017,
+        "lng": 108.89648437500001,
+        "group": "Sacred Forest Meadow"
+    },
+    {
+        "name": "Temple of Time Exterior -> Temple of Time",
+        "lat": 43.71818285879871,
+        "lng": -15.70312410593033,
+        "group": "Temple of Time Exterior"
+    },
+    {
+        "name": "Temple of Time Exterior -> Castle Town",
+        "lat": 40.1900656612118,
+        "lng": -20.624999105930332,
+        "group": "Temple of Time Exterior"
+    },
+    {
+        "name": "Zoras Domain -> Zora River Behind Waterfall",
+        "lat": -42.250206759802815,
+        "lng": 101.16943582892418,
+        "group": "Zora's Domain"
+    },
+    {
+        "name": "Zoras Domain -> Lake Hylia",
+        "lat": -41.34932273723407,
+        "lng": 108.26660379767421,
+        "group": "Zora's Domain"
+    },
+    {
+        "name": "Zoras Domain Behind King Zora -> Zoras Fountain",
+        "lat": -29.866052760099834,
+        "lng": 111.48925915360452,
+        "group": "Zora's Domain"
+    },
+    {
+        "name": "Zoras Domain -> Zora Shop",
+        "lat": -43.378435578051764,
+        "lng": 112.28027477860452,
+        "group": "Zora's Domain"
+    },
+    {
+        "name": "Zoras Domain -> Zoras Domain Storms Grotto",
+        "lat": -40.33537865738077,
+        "lng": 104.50195446610452,
+        "group": "Zora's Domain"
+    },
+    {
+        "name": "Zoras Fountain -> Zoras Domain Behind King Zora",
+        "lat": -60.37404995022027,
+        "lng": 96.97997957468036,
+        "group": "Zora's Fountain"
+    },
+    {
+        "name": "Zoras Fountain -> Jabu Jabus Belly Beginning",
+        "lat": -58.20930884953611,
+        "lng": 104.12109285593034,
+        "group": "Zora's Fountain"
+    },
+    {
+        "name": "Zoras Fountain -> Ice Cavern Beginning",
+        "lat": -52.41135501579547,
+        "lng": 110.28076037764549,
+        "group": "Zora's Fountain"
+    },
+    {
+        "name": "Zoras Fountain -> Zoras Fountain Fairy",
+        "lat": -66.14274296761513,
+        "lng": 113.52538973093036,
+        "group": "Zora's Fountain"
+    },
+    {
+        "name": "Zora River Front -> Hyrule Field",
+        "lat": -45.49094569262732,
+        "lng": 55.942384153604515,
+        "group": "Zora's River"
+    },
+    {
+        "name": "Zora River -> Lost Woods",
+        "lat": -32.76880048488169,
+        "lng": 92.13134899735452,
+        "group": "Zora's River"
+    },
+    {
+        "name": "Zora River Behind Waterfall -> Zoras Domain",
+        "lat": -30.29701788337204,
+        "lng": 93.97705212235452,
+        "group": "Zora's River"
+    },
+    {
+        "name": "Zora River -> Zora River Storms Grotto",
+        "lat": -36.82687474287728,
+        "lng": 57.20214933156968,
+        "group": "Zora's River"
+    },
+    {
+        "name": "Zora River -> Zora River Plateau Open Grotto",
+        "lat": -38.13455657705413,
+        "lng": 69.30908292531969,
+        "group": "Zora's River"
+    },
+    {
+        "name": "Zora River -> Zora River Plateau Bombable Grotto",
+        "lat": -35.71083783530008,
+        "lng": 71.22070401906969,
+        "group": "Zora's River"
     }
 ]
