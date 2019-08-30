@@ -63,13 +63,13 @@ html
 			 			let frome = e;
 			 			let toe = _.findWhere(ent,{to:frome.from,from:frome.to});
 			 			if(typeof toe == 'undefined'){
-							//console.log('Could not find exit for: '+frome.to);
+							console.log('Could not find exit for: '+frome.from+' -> '+frome.to);
 			 				return;
 			 			}
 
 			 			if(oneways.includes(frome.from+'x'+frome.to)){
 			 				//console.log('Already plotted this line one way, skipping');
-			 				return;
+			 				//return;
 			 			}
 
 						let line = L.polyline([[frome.lat,frome.lng],[toe.lat,toe.lng]],{color:'red'}).addTo(map);
