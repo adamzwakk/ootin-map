@@ -1344,5 +1344,96 @@
         "to":2,
         "lat":-74.17607298699065,
         "lng":83.75976562500001
+    },
+    {
+        "from":98,
+        "to":2,
+        "nick":"Lost Woods Sales Grotto -> Lost Woods Beyond Mido",
+        "lat":-71.13098770917021,
+        "lng":83.34228515625
+    },
+    {
+        "from":99,
+        "to":95,
+        "nick":"Forest Temple Lobby -> Sacred Forest Meadow",
+        "lat":-84.2231075743819,
+        "lng":139.48242187500003
+    },
+    {
+        "from":100,
+        "to":95,
+        "nick":"Front of Meadow Grotto -> Sacred Forest Meadow Entryway",
+        "lat":-80.4303300341717,
+        "lng":100.54687500000001
+    },
+    {
+        "from":101,
+        "to":95,
+        "nick":"Meadow Fairy Grotto -> Sacred Forest Meadow",
+        "lat":-77.90646553358178,
+        "lng":101.0302734375
+    },
+    {
+        "from":102,
+        "to":95,
+        "nick":"Meadow Storms Grotto -> Sacred Forest Meadow",
+        "lat":-75.68306846179547,
+        "lng":108.72070312500001
+    },
+    {
+        "from":104,
+        "to":21,
+        "lat":41.57436130598913,
+        "lng":21.005859375000004
+    },
+    {
+        "from":106,
+        "to":86,
+        "lat":-43.9928145004899,
+        "lng":117.02636718750001
+    },
+    {
+        "from":107,
+        "to":86,
+        "lat":-39.673370391765594,
+        "lng":101.84326171875001
+    },
+    {
+        "from":108,
+        "to":105,
+        "nick":"Jabu Jabus Belly Beginning -> Zoras Fountain",
+        "lat":-70.05059634999758,
+        "lng":139.30664062500003
+    },
+    {
+        "from":109,
+        "to":105,
+        "nick":"Ice Cavern Beginning -> Zoras Fountain",
+        "lat":-46.528634695271684,
+        "lng":132.84667968750003
+    },
+    {
+        "from":110,
+        "to":105,
+        "lat":-63.05495931065107,
+        "lng":118.91601562500001
+    },
+    {
+        "from":111,
+        "to":64,
+        "lat":-38.13455657705413,
+        "lng":54.05273437500001
+    },
+    {
+        "from":112,
+        "to":64,
+        "lat":-41.04621681452063,
+        "lng":73.93798828125001
+    },
+    {
+        "from":113,
+        "to":64,
+        "lat":-42.84375132629022,
+        "lng":79.62890625000001
     }
 ]
