@@ -4,7 +4,7 @@ const path = require('path');
 const _ = require('underscore');
 
 const app = express()
-const port = 3000
+const port = 4000
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'pug')
 
@@ -57,17 +57,33 @@ app.get('/spoiler-test', (req, res) => {
 				lng:source.lng
 			});
 		} else {
+			let did = 0;
 			dest = _.findWhere(places,{name:d});
 			if(typeof dest === 'undefined'){
-				return;
+				dest = _.findWhere(sorted_e,{to_name:d})
+				did = dest.to;
+			} else {
+				did = dest.id;
 			}
 
 			spoilers_result.push({
 				from:source.from,
-				to:dest.id,
+				to:did,
 				lat:source.lat,
 				lng:source.lng
 			});
+
+			var destE = _.findWhere(entrances,{from:did});
+			if(typeof destE !== 'undefined'){
+				spoilers_result.push({
+					from:did,
+					to:source.from,
+					lat:destE.lat,
+					lng:destE.lng
+				});
+			} else {
+				//console.log(dest);
+			}
 		}
 	});
 	
@@ -77,4 +93,4 @@ app.get('/spoiler-test', (req, res) => {
 	});
 });
 
-app.listen(process.env.PORT || port)
+app.listen(port,'0.0.0.0')

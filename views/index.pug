@@ -63,13 +63,12 @@ html
 			 			let frome = e;
 			 			let toe = _.findWhere(ent,{to:frome.from,from:frome.to});
 			 			if(typeof toe == 'undefined'){
-							console.log('Could not find exit for: '+frome.to);
-			 				console.log(e);
+							//console.log('Could not find exit for: '+frome.to);
 			 				return;
 			 			}
 
 			 			if(oneways.includes(frome.from+'x'+frome.to)){
-			 				console.log('Already plotted this line one way, skipping');
+			 				//console.log('Already plotted this line one way, skipping');
 			 				//return;
 			 			}
 
