@@ -362,7 +362,7 @@
 	},
 	{
 		"id":79,
-		"name":"Kakariko Potion Shop",
+		"name":"Kakariko Potion Shop Front",
 		"parent":26
 	},
 	{
@@ -538,5 +538,10 @@
 		"id":115,
 		"name":"Castle Town Man in Green House",
 		"parent":15
+	},
+	{
+		"id":116,
+		"name":"Kakariko Potion Shop Back",
+		"parent":26
 	}
 ]

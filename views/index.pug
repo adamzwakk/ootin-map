@@ -32,11 +32,11 @@ html
 
 			 	
 			 	map.on('click',function(e){
-			 		//console.log(JSON.stringify(e.latlng));
+			 		console.log(JSON.stringify(e.latlng));
 			 	});
 
-			 	function renderEntrances(){
-				 	_.each(entrances,function(e){
+			 	function renderEntrances(ent){
+				 	_.each(ent,function(e){
 			 			if(typeof e.from !== 'undefined'){
 			 				if(typeof e.nick !== 'undefined'){
 			 					title = e.nick+' ('+e.from+' -> '+e.to+')';
@@ -50,7 +50,7 @@ html
 			 			} else {
 				 			return;
 			 			}
-			 			var m = L.marker([e.lat, e.lng],{title:title,});
+			 			var m = L.marker([e.lat, e.lng],{title:title});
 			 			m.bindPopup(title).openPopup();
 			 			m.addTo(map);
 			 		});
@@ -59,17 +59,18 @@ html
 			 	function renderPaths(ent){
 			 		let oneways = [];
 			 		_.each(ent,function(e){
-			 			console.log(e);
+
 			 			let frome = e;
 			 			let toe = _.findWhere(ent,{to:frome.from,from:frome.to});
 			 			if(typeof toe == 'undefined'){
-							//console.log('Could not find exit for: '+frome.to);
+							console.log('Could not find exit for: '+frome.to);
+			 				console.log(e);
 			 				return;
 			 			}
 
 			 			if(oneways.includes(frome.from+'x'+frome.to)){
-			 				//console.log('Already plotted this line one way, skipping');
-			 				return;
+			 				console.log('Already plotted this line one way, skipping');
+			 				//return;
 			 			}
 
 						let line = L.polyline([[frome.lat,frome.lng],[toe.lat,toe.lng]],{color:'red'}).addTo(map);
@@ -78,6 +79,6 @@ html
 			 		});
 			 	}
 
-			 	renderEntrances();
+			 	renderEntrances(entrances);
 			 	renderPaths(entrances);
 			})

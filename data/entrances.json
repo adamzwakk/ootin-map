@@ -594,7 +594,7 @@
     },
     {
         "from":26,
-        "to":79,
+        "to":116,
         "nick": "Kakariko Village Backyard -> Kakariko Potion Shop Back",
         "lat": 11.982009055478972,
         "lng": 77.60742187500001
@@ -1464,5 +1464,12 @@
         "to":15,
         "lat":41.376808565702355,
         "lng":-40.27587890625001
+    },
+    {
+        "from":116,
+        "to":26,
+        "nick": "Kakariko Potion Shop Back -> Kakariko Village Backyard",
+        "lat":20.756113874762082,
+        "lng":80.94726562500001
     }
 ]
