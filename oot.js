@@ -34,9 +34,8 @@ app.get('/spoiler-test', (req, res) => {
 		} else {
 			e.from_name = _.findWhere(places,{id:e.from}).name;
 			e.to_name = _.findWhere(places,{id:e.to}).name;
+			e.nick = e.from_name+' -> '+e.to_name;
 		}
-
-		e.name = e.from_name+' -> '+e.to_name;
 
 		sorted_e.push(e)
 	});
@@ -46,31 +45,30 @@ app.get('/spoiler-test', (req, res) => {
 
 	let spoilers_result = [];
 	_.each(spoilers_e,function(d,e){
+		let source = _.findWhere(sorted_e,{nick:e});
 
-		let source = _.findWhere(sorted_e,{name:e});
 		let dest = {};
 		if(typeof d === 'object'){
-			dest = _.findWhere(sorted_e,{name:d.from+' -> '+d.region});
+			dest = _.findWhere(sorted_e,{nick:d.from+' -> '+d.region});
+			spoilers_result.push({
+				from:source.from,
+				to:dest.to,
+				lat:source.lat,
+				lng:source.lng
+			});
 		} else {
-			dest = _.findWhere(sorted_e,{from_name:d});
+			dest = _.findWhere(places,{name:d});
 			if(typeof dest === 'undefined'){
 				return;
 			}
+
+			spoilers_result.push({
+				from:source.from,
+				to:dest.id,
+				lat:source.lat,
+				lng:source.lng
+			});
 		}
-
-		// spoilers_result.push({
-		// 	from:source.from,
-		// 	to:dest.to,
-		// 	lat:source.lat,
-		// 	lng:source.lng
-		// });
-
-		spoilers_result.push({
-			from:dest.to,
-			to:source.from,
-			lat:dest.lat,
-			lng:dest.lng
-		});
 	});
 	
 	return res.render('index',{
