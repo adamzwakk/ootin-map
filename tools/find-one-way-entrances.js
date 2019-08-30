@@ -23,4 +23,8 @@ _.each(entrances,function(e){
 	}
 });
 
-console.log('Found '+missingCount+' missing entrances');
+if(missingCount){
+	console.log('Found '+missingCount+' missing entrances');
+} else {
+	console.log('No missing entrances found!');
+}

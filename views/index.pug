@@ -15,6 +15,7 @@ html
 		script.
 			let entrances = !{entrances};
 			let places = !{places};
+			let activeNavLines = [];
 
 			$(document).ready(function(){
 				$.ajaxSetup({
@@ -25,7 +26,7 @@ html
 			 		minZoom:0,
 			 		maxZoom: 7,
 					zoom: 2,
-			 		center: [50,50],
+			 		center: [-70,120],
 			 	});
 			 	L.tileLayer('./images/grid/{z}/{x}/{y}.jpg',{noWrap:true}).addTo(map);
 
@@ -59,5 +60,28 @@ html
 			 		//var polyLine = L.polyline([[data.entrances[0].lat,data.entrances[0].lng],[data.entrances[3].lat,data.entrances[3].lng]],{color:'red'}).addTo(map);
 			 	}
 
+			 	function renderVanillaPaths(){
+			 		let ent = entrances;
+			 		let oneways = [];
+			 		_.each(ent,function(e,i){
+			 			let frome = e;
+			 			let toe = _.findWhere(entrances,{to:frome.from,from:frome.to});
+			 			if(typeof toe == 'undefined'){
+							//console.log('Could not find exit for: '+frome.to);
+			 				return;
+			 			}
+
+			 			if(oneways.includes(frome.from+'x'+frome.to)){
+			 				//console.log('Already plotted this line one way, skipping');
+			 				return;
+			 			}
+
+						let line = L.polyline([[frome.lat,frome.lng],[toe.lat,toe.lng]],{color:'red'}).addTo(map);
+						oneways.push(toe.to+'x'+toe.from);
+						activeNavLines.push(line);
+			 		});
+			 	}
+
 			 	renderEntrances();
+			 	renderVanillaPaths();
 			})
