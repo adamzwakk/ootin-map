@@ -69,7 +69,7 @@ html
 
 			 			if(oneways.includes(frome.from+'x'+frome.to)){
 			 				//console.log('Already plotted this line one way, skipping');
-			 				//return;
+			 				return;
 			 			}
 
 						let line = L.polyline([[frome.lat,frome.lng],[toe.lat,toe.lng]],{color:'red'}).addTo(map);
