@@ -602,6 +602,7 @@
     {
         "from":26,
         "to":82,
+        "nick": "Kakariko Village Backyard -> Odd Medicine Building",
         "lat": 8.131741490853265,
         "lng": 78.75000000000001
     },
@@ -620,6 +621,7 @@
     {
         "from":26,
         "to":85,
+        "nick":"Kakariko Village Backyard -> Kakariko Back Grotto",
         "lat": 9.91113596707142,
         "lng": 79.40917968750001
     },
@@ -759,6 +761,7 @@
     {
         "from":95,
         "to":2,
+        "nick": "Sacred Forest Meadow Entryway -> Lost Woods Beyond Mido",
         "lat": -80.35944881158255,
         "lng": 105.68115413188934
     },
@@ -1263,6 +1266,7 @@
     {
         "from":82,
         "to":26,
+        "nick": "Odd Medicine Building -> Kakariko Village Backyard",
         "lat":14.626108798876851,
         "lng":87.56103515625
     },
@@ -1281,6 +1285,7 @@
     {
         "from":85,
         "to":26,
+        "nick":"Kakariko Back Grotto -> Kakariko Village Backyard",
         "lat":17.308687886770034,
         "lng":89.07714843750001
     },
@@ -1435,5 +1440,29 @@
         "to":64,
         "lat":-42.84375132629022,
         "lng":79.62890625000001
+    },
+    {
+        "from":15,
+        "to":114,
+        "lat":34.70549341022547,
+        "lng":-38.81469726562501
+    },
+    {
+        "from":114,
+        "to":15,
+        "lat":33.669496972795535,
+        "lng":-38.83666992187501
+    },
+    {
+        "from":15,
+        "to":115,
+        "lat":40.94671366508002,
+        "lng":-40.25390625000001
+    },
+    {
+        "from":115,
+        "to":15,
+        "lat":41.376808565702355,
+        "lng":-40.27587890625001
     }
 ]

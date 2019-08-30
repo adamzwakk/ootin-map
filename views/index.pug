@@ -13,8 +13,8 @@ html
 	body
 		div(id='mapid')
 		script.
-			let entrances = !{entrances};
-			let places = !{places};
+			let entrances = !{JSON.stringify(entrances)};
+			let places = !{JSON.stringify(places)};
 			let activeNavLines = [];
 
 			$(document).ready(function(){
@@ -40,6 +40,8 @@ html
 			 			if(typeof e.from !== 'undefined'){
 			 				if(typeof e.nick !== 'undefined'){
 			 					title = e.nick+' ('+e.from+' -> '+e.to+')';
+			 				} else if(typeof e.from === 'string') {
+								title = '('+e.from+' -> '+e.to+')';
 			 				} else {
 				 				from = _.findWhere(places,{"id":e.from});
 				 				to = _.findWhere(places,{"id":e.to});
@@ -54,12 +56,12 @@ html
 			 		});
 			 	}
 
-			 	function renderVanillaPaths(){
-			 		let ent = entrances;
+			 	function renderPaths(ent){
 			 		let oneways = [];
-			 		_.each(ent,function(e,i){
+			 		_.each(ent,function(e){
+			 			console.log(e);
 			 			let frome = e;
-			 			let toe = _.findWhere(entrances,{to:frome.from,from:frome.to});
+			 			let toe = _.findWhere(ent,{to:frome.from,from:frome.to});
 			 			if(typeof toe == 'undefined'){
 							//console.log('Could not find exit for: '+frome.to);
 			 				return;
@@ -77,5 +79,5 @@ html
 			 	}
 
 			 	renderEntrances();
-			 	renderVanillaPaths();
+			 	renderPaths(entrances);
 			})

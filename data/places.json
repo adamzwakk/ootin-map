@@ -528,5 +528,15 @@
 		"id":113,
 		"name":"Zora River Plateau Bombable Grotto",
 		"parent":64
+	},
+	{
+		"id":114,
+		"name":"Castle Town Bombchu Shop",
+		"parent":15
+	},
+	{
+		"id":115,
+		"name":"Castle Town Man in Green House",
+		"parent":15
 	}
 ]
