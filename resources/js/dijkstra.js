@@ -1,3 +1,5 @@
+//source = https://gist.github.com/bellbind/3088707
+
 // Dijkstra Algorithm Example
 // - Using suite data structure make algorithm clearer
 
