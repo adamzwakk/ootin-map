@@ -95,7 +95,7 @@ $(document).ready(function(){
  		_.each(activeRoute,function(r){
 			map.removeLayer(r);
 		});
-		$('.route-table li').remove();
+		$('.route-table,.items-table').empty();
  		activeRoute = [];
  		let linecolor = 'green';
 		let graph = [];
@@ -260,7 +260,7 @@ $(document).ready(function(){
  			map.removeLayer(r);
  		});
  		activeRoute = [];
- 		$('.route-table').empty();
+ 		$('.route-table,.items-table').empty();
  		toggleMarkers(false);
  		togglePaths(false);
  	});
