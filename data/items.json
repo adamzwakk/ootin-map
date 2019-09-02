@@ -97,7 +97,8 @@
     },
     {
         "id": 25,
-        "name": "Deku Shield"
+        "name": "Deku Shield",
+        "icon":"shielddeku"
     },
     {
         "id": 26,
@@ -177,7 +178,8 @@
     },
     {
         "id": 45,
-        "name": "Kokiri Sword"
+        "name": "Kokiri Sword",
+        "icon":"swordkokiri"
     },
     {
         "id": 46,

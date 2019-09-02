@@ -143,28 +143,26 @@ $(document).ready(function(){
 			activeRoute.push(line);
 
 			if(typeof frome.required_items !== 'undefined'){
-				_.each(frome.required_items,function(ri){
-					let i = _.findWhere(items,{id:ri});
-					if(!finalitems.includes(i.name)){
-						finalitems.push(i.name);
-					}
-				});
+				finalitems = finalitems.concat(frome.required_items);
 			}
 
 			if(typeof toe.required_items !== 'undefined'){
-				_.each(toe.required_items,function(ri){
-					let i = _.findWhere(items,{id:ri});
-					if(!finalitems.includes(i.name)){
-						finalitems.push(i.name);
-					}
-				});
+				finalitems = finalitems.concat(toe.required_items);
 			}
 
 			$('.route-table').append('<li>'+_.findWhere(places,{id:s}).name+' -> '+_.findWhere(places,{id:d}).name+"</li>")
 			lastpath = toe;
 		}
 		_.each(finalitems,function(ri){
-			$('.items-table').append('<li>'+ri+'</li>')
+			let i = _.findWhere(items,{id:ri});
+			let li = $('<li></li>');
+			if(typeof i.icon !== 'undefined'){
+				li.addClass('icons-'+i.icon);
+				li.attr('title',i.name);
+			} else {
+				li.append(i.name);
+			}
+			$('.items-table').append(li)
 		});
 		toggleMarkers(true);
 		togglePaths(true);

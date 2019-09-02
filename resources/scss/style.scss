@@ -1,4 +1,7 @@
 @import 'compass/reset';
+@import "compass/utilities/sprites";
+$icons-sprite-dimensions: true;
+@import "icons/*.png";
 
 html, body, #map{
   height: 100%;
@@ -21,4 +24,12 @@ html, body, #map{
 	top:0;
 	z-index: 2;
 	color:#fff;
+
+	.items-table{
+		li{
+			display: inline-block;
+		}
+	}
 }
+
+@include all-icons-sprites;
