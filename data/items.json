@@ -1,0 +1,350 @@
+[
+    {
+        "id": 1,
+        "name": "Arrows (10)"
+    },
+    {
+        "id": 2,
+        "name": "Arrows (30)"
+    },
+    {
+        "id": 3,
+        "name": "Arrows (5)"
+    },
+    {
+        "id": 4,
+        "name": "Biggoron Sword"
+    },
+    {
+        "id": 5,
+        "name": "Bolero of Fire"
+    },
+    {
+        "id": 6,
+        "name": "Bomb Bag"
+    },
+    {
+        "id": 7,
+        "name": "Bomb Bag"
+    },
+    {
+        "id": 8,
+        "name": "Bomb Bag"
+    },
+    {
+        "id": 9,
+        "name": "Bombchus"
+    },
+    {
+        "id": 10,
+        "name": "Bombs (10)"
+    },
+    {
+        "id": 11,
+        "name": "Bombs (20)"
+    },
+    {
+        "id": 12,
+        "name": "Bombs (5)"
+    },
+    {
+        "id": 13,
+        "name": "Boomerang"
+    },
+    {
+        "id": 14,
+        "name": "Bottle (1)"
+    },
+    {
+        "id": 15,
+        "name": "Bottle (2)"
+    },
+    {
+        "id": 16,
+        "name": "Bottle (3)"
+    },
+    {
+        "id": 17,
+        "name": "Bottle (4)"
+    },
+    {
+        "id": 18,
+        "name": "Bow"
+    },
+    {
+        "id": 19,
+        "name": "Bow"
+    },
+    {
+        "id": 20,
+        "name": "Bow"
+    },
+    {
+        "id": 21,
+        "name": "Deku Nut Capacity"
+    },
+    {
+        "id": 22,
+        "name": "Deku Nut Capacity"
+    },
+    {
+        "id": 23,
+        "name": "Deku Nuts (10)"
+    },
+    {
+        "id": 24,
+        "name": "Deku Nuts (5)"
+    },
+    {
+        "id": 25,
+        "name": "Deku Shield"
+    },
+    {
+        "id": 26,
+        "name": "Deku Shield"
+    },
+    {
+        "id": 27,
+        "name": "Deku Shield"
+    },
+    {
+        "id": 28,
+        "name": "Deku Shield"
+    },
+    {
+        "id": 29,
+        "name": "Deku Stick Capacity"
+    },
+    {
+        "id": 30,
+        "name": "Deku Stick Capacity"
+    },
+    {
+        "id": 31,
+        "name": "Dins Fire"
+    },
+    {
+        "id": 32,
+        "name": "Double Defense"
+    },
+    {
+        "id": 33,
+        "name": "Eponas Song"
+    },
+    {
+        "id": 34,
+        "name": "Farores Wind"
+    },
+    {
+        "id": 35,
+        "name": "Fire Arrows"
+    },
+    {
+        "id": 36,
+        "name": "Goron Tunic"
+    },
+    {
+        "id": 37,
+        "name": "Hammer"
+    },
+    {
+        "id": 38,
+        "name": "Heart Container"
+    },
+    {
+        "id": 39,
+        "name": "Hover Boots"
+    },
+    {
+        "id": 40,
+        "name": "Hylian Shield"
+    },
+    {
+        "id": 41,
+        "name": "Hylian Shield"
+    },
+    {
+        "id": 42,
+        "name": "Ice Arrows"
+    },
+    {
+        "id": 43,
+        "name": "Ice Trap"
+    },
+    {
+        "id": 44,
+        "name": "Iron Boots"
+    },
+    {
+        "id": 45,
+        "name": "Kokiri Sword"
+    },
+    {
+        "id": 46,
+        "name": "Lens of Truth"
+    },
+    {
+        "id": 47,
+        "name": "Light Arrows"
+    },
+    {
+        "id": 48,
+        "name": "Magic Meter"
+    },
+    {
+        "id": 49,
+        "name": "Magic Meter"
+    },
+    {
+        "id": 50,
+        "name": "Minuet of Forest"
+    },
+    {
+        "id": 51,
+        "name": "Mirror Shield"
+    },
+    {
+        "id": 52,
+        "name": "Nayrus Love"
+    },
+    {
+        "id": 53,
+        "name": "Nocturne of Shadow"
+    },
+    {
+        "id": 54,
+        "name": "Ocarina"
+    },
+    {
+        "id": 55,
+        "name": "Ocarina"
+    },
+    {
+        "id": 56,
+        "name": "Piece of Heart (Treasure Chest Game)"
+    },
+    {
+        "id": 57,
+        "name": "Piece of Heart"
+    },
+    {
+        "id": 58,
+        "name": "Pocket Cucco"
+    },
+    {
+        "id": 59,
+        "name": "Prelude of Light"
+    },
+    {
+        "id": 60,
+        "name": "Progressive Hookshot"
+    },
+    {
+        "id": 61,
+        "name": "Progressive Hookshot"
+    },
+    {
+        "id": 62,
+        "name": "Progressive Scale"
+    },
+    {
+        "id": 63,
+        "name": "Progressive Scale"
+    },
+    {
+        "id": 64,
+        "name": "Progressive Strength Upgrade"
+    },
+    {
+        "id": 65,
+        "name": "Progressive Strength Upgrade"
+    },
+    {
+        "id": 66,
+        "name": "Progressive Strength Upgrade"
+    },
+    {
+        "id": 67,
+        "name": "Progressive Wallet"
+    },
+    {
+        "id": 68,
+        "name": "Progressive Wallet"
+    },
+    {
+        "id": 69,
+        "name": "Recovery Heart"
+    },
+    {
+        "id": 70,
+        "name": "Requiem of Spirit"
+    },
+    {
+        "id": 71,
+        "name": "Rupee (1)"
+    },
+    {
+        "id": 72,
+        "name": "Rupees (20)"
+    },
+    {
+        "id": 73,
+        "name": "Rupees (200)"
+    },
+    {
+        "id": 74,
+        "name": "Rupees (5)"
+    },
+    {
+        "id": 75,
+        "name": "Rupees (50)"
+    },
+    {
+        "id": 76,
+        "name": "Sarias Song"
+    },
+    {
+        "id": 77,
+        "name": "Serenade of Water"
+    },
+    {
+        "id": 78,
+        "name": "Slingshot"
+    },
+    {
+        "id": 79,
+        "name": "Slingshot"
+    },
+    {
+        "id": 80,
+        "name": "Slingshot"
+    },
+    {
+        "id": 81,
+        "name": "Song of Storms"
+    },
+    {
+        "id": 82,
+        "name": "Song of Time"
+    },
+    {
+        "id": 83,
+        "name": "Stone of Agony"
+    },
+    {
+        "id": 84,
+        "name": "Suns Song"
+    },
+    {
+        "id": 85,
+        "name": "Weird Egg"
+    },
+    {
+        "id": 86,
+        "name": "Zeldas Lullaby"
+    },
+    {
+        "id": 87,
+        "name": "Zora Tunic"
+    }
+]
