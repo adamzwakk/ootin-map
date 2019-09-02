@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 	let config = {
 		markers_hidden:false,
-		navlines_hidden:false
+		navlines_hidden:true
 	}
 
 	let activeNavLines = [];
@@ -69,7 +69,7 @@ $(document).ready(function(){
  				//return;
  			}
 
-			let line = L.polyline([[frome.lat,frome.lng],[toe.lat,toe.lng]],{color:linecolor}).addTo(map);
+			let line = L.polyline([[frome.lat,frome.lng],[toe.lat,toe.lng]],{color:linecolor});
 			oneways.push(toe.to+'x'+toe.from);
 			activeNavLines.push(line);
  		});
