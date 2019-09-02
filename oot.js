@@ -1,4 +1,5 @@
 const express = require('express')
+const fileUpload = require('express-fileupload');
 const fs = require('fs');
 const path = require('path');
 const _ = require('underscore');
@@ -7,6 +8,7 @@ const app = express()
 const port = 4000
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'pug')
+app.use(fileUpload());
 
 console.log("Starting up OOTin Map!")
 
@@ -40,13 +42,13 @@ app.get('/', (req, res) => {
 	});
 });
 
-app.get('/spoiler-test', (req, res) => {
+app.post('/spoiler-upload', (req, res) => {
 	var places = JSON.parse(fs.readFileSync('./data/places.json','utf8'));
 	var entrances = JSON.parse(fs.readFileSync('./data/entrances.json','utf8'));
 
 	let sorted_e = parseEntrances(entrances,places);
 
-	var spoilers = JSON.parse(fs.readFileSync('./data/examples/spoilers.json','utf8'));
+	var spoilers = JSON.parse(req.files.file.data.toString('utf8'));
 	let spoilers_e = spoilers.entrances;
 
 	let spoilers_result = [];
@@ -103,10 +105,8 @@ app.get('/spoiler-test', (req, res) => {
 		}
 	});
 	
-	return res.render('index',{
-		places:places,
-		entrances:spoilers_result,
-	});
+	res.setHeader('Content-Type', 'application/json');
+	return res.end(JSON.stringify(spoilers_result));
 });
 
 app.listen(port,'0.0.0.0')

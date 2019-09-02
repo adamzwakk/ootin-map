@@ -1,7 +1,4 @@
 $(document).ready(function(){
-	$.ajaxSetup({
-	    async: false
-	});
 
 	let config = {
 		markers_hidden:false,
@@ -170,6 +167,36 @@ $(document).ready(function(){
 			config.navlines_hidden = true;
 		}
  	}
+
+ 	function cleanSlate(){
+ 		let r = []
+ 		_.each(r.concat(activeMarkers,activeNavLines),function(m){
+    		map.removeLayer(m)
+        });
+        activeMarkers = [];
+        activeNavLines = [];
+ 	}
+
+ 	$('#sidebar #upload-spoilers input[type="file"]').change(function(){
+ 		let fd = new FormData(); 
+        let files = $(this)[0].files[0]; 
+        fd.append('file', files); 
+
+ 		$.ajax({ 
+            url: '/spoiler-upload', 
+            type: 'post', 
+            data: fd, 
+            contentType: false, 
+            processData: false, 
+            success: function(response){ 
+                entrances = response;
+                cleanSlate();
+                renderEntrances(entrances);
+			 	renderPaths(entrances);
+			 	$('#sidebar #upload-spoilers input[type="file"]').val('');
+            }, 
+        }); 
+ 	});
 
  	$('#sidebar #route-planner .start-route').click(function(e){
  		e.preventDefault();
