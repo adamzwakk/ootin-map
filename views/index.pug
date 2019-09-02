@@ -10,6 +10,9 @@ html
 	body
 		div(id='map')
 		div(id='sidebar')
+			div(id='toggles')
+				a(class='toggle-markers',href='#') Toggle Markers
+				a(class='toggle-nav',href='#') Toggle Nav
 			div(id='route-planner')
 				div(class='route-from')
 					h6 From:
@@ -24,6 +27,7 @@ html
 							if typeof p.name !== 'undefined'
 								option(value=p.id)= p.name
 				a(href='#',class='start-route') Go
+				a(href='#',class='clear-route') Clear
 				ul(class='route-table')
 		script.
 			let entrances = !{JSON.stringify(entrances)};

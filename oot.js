@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 	
 	return res.render('index',{
 		places:places,
-		entrances:parseEntrances(entrances)
+		entrances:parseEntrances(entrances,places)
 	});
 });
 
@@ -44,7 +44,7 @@ app.get('/spoiler-test', (req, res) => {
 	var places = JSON.parse(fs.readFileSync('./data/places.json','utf8'));
 	var entrances = JSON.parse(fs.readFileSync('./data/entrances.json','utf8'));
 
-	let sorted_e = parseEntrances(entrances);
+	let sorted_e = parseEntrances(entrances,places);
 
 	var spoilers = JSON.parse(fs.readFileSync('./data/examples/spoilers.json','utf8'));
 	let spoilers_e = spoilers.entrances;
