@@ -5,7 +5,8 @@ gulp.task('default', function() {
 	var extJS = gulp.src([
 		'./node_modules/leaflet/dist/leaflet.js',
 		'./node_modules/underscore/underscore-min.js',
-		'./node_modules/jquery/dist/jquery.min.js'])
+		'./node_modules/jquery/dist/jquery.min.js',
+		'./resources/js/dijkstra.js'])
 	.pipe(gulp.dest('./public/js'));
 
 	//temp marker images for leaflet

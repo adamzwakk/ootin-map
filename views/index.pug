@@ -4,6 +4,7 @@ html
 		script(src='./js/leaflet.js')
 		script(src='./js/underscore-min.js')
 		script(src='./js/jquery.min.js')
+		script(src='./js/dijkstra.js')
 
 		style.
 			#mapid { width:1920px; height:1080px; }
@@ -85,6 +86,53 @@ html
 			 		});
 			 	}
 
+			 	function findPath(place1,place2){
+			 		let linecolor = 'green';
+					let graph = [];
+					_.each(entrances,function(e){
+						graph.push({
+							from:e.from,
+							to:e.to,
+							cost:1
+						});
+					})
+					
+					let finalroute = [];
+					let vertices = compileVertices(graph);
+					let route = findRoute(vertices[place1],vertices[place2]).route;
+
+					let lastpath = false;
+					for (i = 0; i < route.length; i++) {
+						let r = route[i];
+						let s = r.label;
+						if(typeof route[i+1] === 'undefined'){
+							break;
+						}
+						let d = route[i+1].label;						
+						let frome = _.findWhere(entrances,{from:s,to:d});
+						let toe = _.findWhere(entrances,{from:d,to:s});
+
+						let path = [[frome.lat,frome.lng],[toe.lat,toe.lng]];
+						if(lastpath !== false){
+							path.unshift([lastpath.lat,lastpath.lng]);
+						}
+
+						let line = L.polyline(path,{color:linecolor}).addTo(map);
+
+						finalroute.push({
+							from:s,
+							from_name:_.findWhere(places,{id:s}).name,
+							to:d,
+							to_name:_.findWhere(places,{id:d}).name,
+						});
+
+						lastpath = toe;
+					}
+
+					return finalroute;
+			 	}
+
 			 	renderEntrances(entrances);
 			 	renderPaths(entrances);
+			 	let route = findPath(108,106);
 			})
