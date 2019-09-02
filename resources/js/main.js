@@ -47,8 +47,11 @@ $(document).ready(function(){
 
  			var m = L.marker([e.lat, e.lng],{title:title});
 
- 			let popupContent = $('<div></div>');
- 			popupContent.append('<p>'+title+'</p>');
+ 			let popupContent = $('#entrance-marker-popup-template').clone().addClass('popup-marker').removeAttr('id');
+ 			popupContent.find('.entranceTitle').html(title);
+ 			popupContent.find('.toEntrance select').attr('data-from',e.from);
+ 			popupContent.find('.toEntrance select').attr('data-to',e.to);
+ 			popupContent.find('.toEntrance select option[value="'+e.to+'"]').attr('selected','selected');
  			if(rItems.length){
  				popupContent.append('<div>Required Items:</div><ul class="required_items"></ul>')
  				_.each(rItems,function(r){
@@ -217,6 +220,12 @@ $(document).ready(function(){
         $('.seed-id').empty();
  	}
 
+ 	function redraw(){
+ 		cleanSlate();
+ 		renderEntrances(entrances);
+	 	renderPaths(entrances);
+ 	}
+
  	$('#sidebar #upload-spoilers input[type="file"]').change(function(){
  		let fd = new FormData(); 
         let files = $(this)[0].files[0]; 
@@ -234,10 +243,8 @@ $(document).ready(function(){
             		return;
             	}
                 entrances = response.entrances;
-                cleanSlate();
                 config.vanilla = false;
-                renderEntrances(entrances);
-			 	renderPaths(entrances);
+                redraw();
 			 	$('.seed-id').html(response.seed);
 			 	$('#sidebar #upload-spoilers input[type="file"]').val('');
             }, 
@@ -280,12 +287,25 @@ $(document).ready(function(){
  			return;
  		}
  		entrances = vanillaEntrances;
- 		cleanSlate();
- 		renderEntrances(entrances);
-	 	renderPaths(entrances);
+ 		redraw();
 	 	config.vanilla = true;
  	});
 
- 	renderEntrances(entrances);
- 	renderPaths(entrances);
+ 	$('#map').on('change','.popup-marker .toEntrance select',function(){
+ 		let s = $(this).attr('data-from');
+ 		let oldd = $(this).attr('data-to')
+ 		let d = $(this).find('option:selected').val();
+
+ 		for (var i = 0; i < entrances.length; i++) {
+ 			let e = entrances[i];
+ 			if(e.from == s && e.to == oldd){
+ 				entrances[i].to = d;
+ 				break;
+ 			}
+ 		}
+ 		redraw();
+	 	config.vanilla = false;
+ 	});
+
+ 	redraw();
 });

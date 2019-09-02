@@ -45,3 +45,12 @@ html
 			let places = !{JSON.stringify(places)};
 			let items = !{JSON.stringify(items)};
 		script(src='./js/main.js')
+		div(id='templates')
+			div(id='entrance-marker-popup-template')
+				div
+					div(class='entranceTitle')
+					div(class='toEntrance')
+						select
+							each p in places
+								if typeof p.name !== 'undefined'
+									option(value=p.id)= p.name

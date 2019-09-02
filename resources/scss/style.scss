@@ -32,4 +32,8 @@ html, body, #map{
 	}
 }
 
+#templates{
+	display: none;
+}
+
 @include all-icons-sprites;
