@@ -15,6 +15,14 @@ gulp.task('default', function() {
 	return [extCss,extJS,markerImgs];
 });
 
+gulp.task('compile-js',function(){
+	return gulp.src(['./resources/js/**/*.js']).pipe(gulp.dest('public/js'));
+});
+
+gulp.task('watch',function(){
+	gulp.watch('./resources/js/**/*.js',gulp.series('compile-js'))
+});
+
 gulp.task('copy-grid',function(){
 	return gulp.src(['assets/mapfiles/grid/**/*']).pipe(gulp.dest('./public/images/grid'));
 });

@@ -12,7 +12,9 @@ var compileVertices = function (graph) {
         if (!vs[edge.from]) vs[edge.from] = {label: edge.from, edges: []};
         if (!vs[edge.to]) vs[edge.to] = {label: edge.to, edges: []};
         vs[edge.from].edges.push({dest: vs[edge.to], cost: edge.cost});
-        vs[edge.to].edges.push({dest: vs[edge.from], cost: edge.cost});
+        if(typeof edge.oneway === 'undefined'){
+            vs[edge.to].edges.push({dest: vs[edge.from], cost: edge.cost});
+        }
     });
     return vs;
 };

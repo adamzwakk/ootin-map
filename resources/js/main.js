@@ -1,0 +1,139 @@
+$(document).ready(function(){
+	$.ajaxSetup({
+	    async: false
+	});
+
+	let activeNavLines = [];
+	let activeRoute = [];
+
+ 	var map = L.map('map', {
+ 		minZoom:0,
+ 		maxZoom: 7,
+		zoom: 2,
+ 		center: [-12,0],
+ 	});
+ 	L.tileLayer('./images/grid/{z}/{x}/{y}.jpg',{noWrap:true}).addTo(map);
+
+ 	
+ 	map.on('click',function(e){
+ 		console.log(JSON.stringify(e.latlng));
+ 	});
+
+ 	function renderEntrances(ent){
+	 	_.each(ent,function(e){
+ 			if(typeof e.from !== 'undefined'){
+ 				if(typeof e.nick !== 'undefined'){
+ 					title = e.nick+' ('+e.from+' -> '+e.to+')';
+ 				} else if(typeof e.from === 'string') {
+					title = '('+e.from+' -> '+e.to+')';
+ 				} else {
+	 				from = _.findWhere(places,{"id":e.from});
+	 				to = _.findWhere(places,{"id":e.to});
+	 				title = from.name+' -> '+to.name+' ('+e.from+' -> '+e.to+')';
+ 				}
+ 			} else {
+	 			return;
+ 			}
+ 			var m = L.marker([e.lat, e.lng],{title:title});
+ 			m.bindPopup(title).openPopup();
+ 			m.addTo(map);
+ 		});
+ 	}
+
+ 	function renderPaths(ent){
+ 		let oneways = [];
+ 		_.each(ent,function(e){
+ 			let frome = e;
+ 			let toe = {};
+ 			let linecolor = 'red';
+
+ 			if(typeof frome.oneway !== 'undefined' && typeof frome.extra_to !== 'undefined'){
+				toe = frome.extra_to;
+				linecolor = 'yellow';
+ 			} else {
+ 				toe = _.findWhere(ent,{to:frome.from,from:frome.to});
+ 			}
+ 			if(typeof toe == 'undefined'){
+				console.log('Could not find exit for: '+frome.from+' -> '+frome.to);
+ 				return;
+ 			}
+
+ 			if(oneways.includes(frome.from+'x'+frome.to)){
+ 				//console.log('Already plotted this line one way, skipping');
+ 				//return;
+ 			}
+
+			let line = L.polyline([[frome.lat,frome.lng],[toe.lat,toe.lng]],{color:linecolor}).addTo(map);
+			oneways.push(toe.to+'x'+toe.from);
+			activeNavLines.push(line);
+ 		});
+ 	}
+
+ 	function findPath(place1,place2){
+ 		_.each(activeRoute,function(r){
+			map.removeLayer(r);
+		});
+		$('.route-table li').remove();
+ 		activeRoute = [];
+ 		let linecolor = 'green';
+		let graph = [];
+		_.each(entrances,function(e){
+			let o = {
+				from:e.from,
+				to:e.to,
+				cost:1
+			};
+			if(typeof e.oneway !== 'undefined'){
+				o.oneway = true;
+			}
+			graph.push(o);
+		});
+		
+		let finalroute = [];
+		let vertices = compileVertices(graph);
+		let route = findRoute(vertices[place1],vertices[place2]).route;
+
+		let lastpath = false;
+		for (i = 0; i < route.length; i++) {
+			let r = route[i];
+			let s = r.label;
+			if(typeof route[i+1] === 'undefined'){
+				break;
+			}
+			let d = route[i+1].label;						
+			let frome = _.findWhere(entrances,{from:s,to:d});
+			let toe = _.findWhere(entrances,{from:d,to:s});
+
+			let path = [[frome.lat,frome.lng],[toe.lat,toe.lng]];
+			if(lastpath !== false){
+				path.unshift([lastpath.lat,lastpath.lng]);
+			}
+
+			let line = L.polyline(path,{color:linecolor}).addTo(map);
+
+			finalroute.push({
+				from:s,
+				from_name:_.findWhere(places,{id:s}).name,
+				to:d,
+				to_name:_.findWhere(places,{id:d}).name,
+			});
+			activeRoute.push(line);
+
+			$('.route-table').append('<li>'+_.findWhere(places,{id:s}).name+' -> '+_.findWhere(places,{id:d}).name+"</li>")
+
+			lastpath = toe;
+		}
+ 	}
+
+ 	$('#sidebar .start-route').click(function(e){
+ 		e.preventDefault();
+ 		let from = $('#route-planner .route-from select').val();
+ 		let to = $('#route-planner .route-to select').val();
+
+ 		findPath(from,to)
+ 	});
+
+ 	renderEntrances(entrances);
+ 	renderPaths(entrances);
+ 	let route = findPath(1,11);
+});

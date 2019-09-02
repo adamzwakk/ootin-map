@@ -10,21 +10,7 @@ app.set('view engine', 'pug')
 
 console.log("Starting up OOTin Map!")
 
-
-app.get('/', (req, res) => {
-	var places = JSON.parse(fs.readFileSync('./data/places.json','utf8'));
-	var entrances = JSON.parse(fs.readFileSync('./data/entrances.json','utf8'));
-	
-	return res.render('index',{
-		places:places,
-		entrances:entrances
-	});
-});
-
-app.get('/spoiler-test', (req, res) => {
-	var places = JSON.parse(fs.readFileSync('./data/places.json','utf8'));
-	var entrances = JSON.parse(fs.readFileSync('./data/entrances.json','utf8'));
-
+function parseEntrances(entrances,places){
 	let sorted_e = [];
 	_.each(entrances,function(e){
 		if(typeof e.nick !== 'undefined'){
@@ -39,6 +25,26 @@ app.get('/spoiler-test', (req, res) => {
 
 		sorted_e.push(e)
 	});
+
+	return sorted_e;
+}
+
+
+app.get('/', (req, res) => {
+	var places = JSON.parse(fs.readFileSync('./data/places.json','utf8'));
+	var entrances = JSON.parse(fs.readFileSync('./data/entrances.json','utf8'));
+	
+	return res.render('index',{
+		places:places,
+		entrances:parseEntrances(entrances)
+	});
+});
+
+app.get('/spoiler-test', (req, res) => {
+	var places = JSON.parse(fs.readFileSync('./data/places.json','utf8'));
+	var entrances = JSON.parse(fs.readFileSync('./data/entrances.json','utf8'));
+
+	let sorted_e = parseEntrances(entrances);
 
 	var spoilers = JSON.parse(fs.readFileSync('./data/examples/spoilers.json','utf8'));
 	let spoilers_e = spoilers.entrances;
