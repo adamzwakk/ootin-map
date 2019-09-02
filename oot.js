@@ -11,6 +11,12 @@ app.set('view engine', 'pug')
 app.use(fileUpload());
 
 console.log("Starting up OOTin Map!")
+var places = JSON.parse(fs.readFileSync('./data/places.json','utf8'));
+console.log('Found '+places.length+' places');
+var entrances = JSON.parse(fs.readFileSync('./data/entrances.json','utf8'));
+entrances = parseEntrances(entrances,places);
+console.log('Parsed '+entrances.length+' entrances');
+
 
 function parseEntrances(entrances,places){
 	let sorted_e = [];
@@ -33,31 +39,26 @@ function parseEntrances(entrances,places){
 
 
 app.get('/', (req, res) => {
-	var places = JSON.parse(fs.readFileSync('./data/places.json','utf8'));
-	var entrances = JSON.parse(fs.readFileSync('./data/entrances.json','utf8'));
-	
 	return res.render('index',{
 		places:places,
-		entrances:parseEntrances(entrances,places)
+		entrances:entrances
 	});
 });
 
 app.post('/spoiler-upload', (req, res) => {
-	var places = JSON.parse(fs.readFileSync('./data/places.json','utf8'));
-	var entrances = JSON.parse(fs.readFileSync('./data/entrances.json','utf8'));
-
-	let sorted_e = parseEntrances(entrances,places);
-
 	var spoilers = JSON.parse(req.files.file.data.toString('utf8'));
+	if(typeof spoilers.entrances === 'undefined'){
+		res.end(JSON.stringify({"error":"No Entrances Found"}));
+	}
 	let spoilers_e = spoilers.entrances;
 
 	let spoilers_result = [];
 	_.each(spoilers_e,function(d,e){
-		let source = _.findWhere(sorted_e,{nick:e});
+		let source = _.findWhere(entrances,{nick:e});
 
 		let dest = {};
 		if(typeof d === 'object'){
-			dest = _.findWhere(sorted_e,{nick:d.from+' -> '+d.region});
+			dest = _.findWhere(entrances,{nick:d.from+' -> '+d.region});
 			let ob = {
 				from_name:source.nick,
 				to_name:dest.nick,
@@ -78,7 +79,7 @@ app.post('/spoiler-upload', (req, res) => {
 			let did = 0;
 			dest = _.findWhere(places,{name:d});
 			if(typeof dest === 'undefined'){
-				dest = _.findWhere(sorted_e,{to_name:d})
+				dest = _.findWhere(entrances,{to_name:d})
 				did = dest.to;
 			} else {
 				did = dest.id;
@@ -106,7 +107,11 @@ app.post('/spoiler-upload', (req, res) => {
 	});
 	
 	res.setHeader('Content-Type', 'application/json');
-	return res.end(JSON.stringify(spoilers_result));
+	return res.end(JSON.stringify({
+		seed:spoilers[':seed'],
+		entrances:spoilers_result
+	}));
 });
 
 app.listen(port,'0.0.0.0')
+console.log('Ready!');

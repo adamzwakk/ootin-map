@@ -10,10 +10,15 @@ html
 	body
 		div(id='map')
 		div(id='sidebar')
-			div(id='toggles')
-				a(class='toggle-markers',href='#') Toggle Markers
-				a(class='toggle-nav',href='#') Toggle Nav
+			ul(id='toggles')
+				li
+					a(class='toggle-markers',href='#') Toggle Markers
+				li
+					a(class='toggle-nav',href='#') Toggle Nav
+				li
+					a(class='vanilla-reset',href='#') Vanilla Reset
 			div(id='upload-spoilers')
+				div(class='seed-id')
 				input(type='file')
 			div(id='route-planner')
 				div(class='route-from')
@@ -32,6 +37,7 @@ html
 				a(href='#',class='clear-route') Clear
 				ul(class='route-table')
 		script.
+			let vanillaEntrances = !{JSON.stringify(entrances)};
 			let entrances = !{JSON.stringify(entrances)};
 			let places = !{JSON.stringify(places)};
 		script(src='./js/main.js')

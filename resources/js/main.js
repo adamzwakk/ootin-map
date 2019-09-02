@@ -2,7 +2,8 @@ $(document).ready(function(){
 
 	let config = {
 		markers_hidden:false,
-		navlines_hidden:true
+		navlines_hidden:true,
+		vanilla:true
 	}
 
 	let activeNavLines = [];
@@ -170,11 +171,13 @@ $(document).ready(function(){
 
  	function cleanSlate(){
  		let r = []
- 		_.each(r.concat(activeMarkers,activeNavLines),function(m){
+ 		_.each(r.concat(activeMarkers,activeNavLines,activeRoute),function(m){
     		map.removeLayer(m)
         });
         activeMarkers = [];
         activeNavLines = [];
+        activeRoute = [];
+        $('.seed-id').empty();
  	}
 
  	$('#sidebar #upload-spoilers input[type="file"]').change(function(){
@@ -189,10 +192,16 @@ $(document).ready(function(){
             contentType: false, 
             processData: false, 
             success: function(response){ 
-                entrances = response;
+            	if(typeof response.error !== 'undefined'){
+            		alert(response.error);
+            		return;
+            	}
+                entrances = response.entrances;
                 cleanSlate();
+                config.vanilla = false;
                 renderEntrances(entrances);
 			 	renderPaths(entrances);
+			 	$('.seed-id').html(response.seed);
 			 	$('#sidebar #upload-spoilers input[type="file"]').val('');
             }, 
         }); 
@@ -222,9 +231,22 @@ $(document).ready(function(){
 		toggleMarkers(false);
  	});
 
- 	$('#toggles .toggle-nav').click(function(e){
+ 	$('#sidebar #toggles .toggle-nav').click(function(e){
  		e.preventDefault();
  		togglePaths(false);
+ 	});
+
+ 	$('#sidebar #toggles .vanilla-reset').click(function(e){
+ 		e.preventDefault();
+ 		if(config.vanilla){
+ 			alert('Already looking at vanilla')
+ 			return;
+ 		}
+ 		entrances = vanillaEntrances;
+ 		cleanSlate();
+ 		renderEntrances(entrances);
+	 	renderPaths(entrances);
+	 	config.vanilla = true;
  	});
 
  	renderEntrances(entrances);
