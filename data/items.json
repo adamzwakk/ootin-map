@@ -213,11 +213,11 @@
     },
     {
         "id": 54,
-        "name": "Ocarina"
+        "name": "Fairy Ocarina"
     },
     {
         "id": 55,
-        "name": "Ocarina"
+        "name": "Ocarina of Time"
     },
     {
         "id": 56,
@@ -237,31 +237,31 @@
     },
     {
         "id": 60,
-        "name": "Progressive Hookshot"
+        "name": "Hookshot"
     },
     {
         "id": 61,
-        "name": "Progressive Hookshot"
+        "name": "Longshot"
     },
     {
         "id": 62,
-        "name": "Progressive Scale"
+        "name": "Silver Scale"
     },
     {
         "id": 63,
-        "name": "Progressive Scale"
+        "name": "Gold Scale"
     },
     {
         "id": 64,
-        "name": "Progressive Strength Upgrade"
+        "name": "Goron Bracelet"
     },
     {
         "id": 65,
-        "name": "Progressive Strength Upgrade"
+        "name": "Silver Gauntlets"
     },
     {
         "id": 66,
-        "name": "Progressive Strength Upgrade"
+        "name": "Gold Gauntlets"
     },
     {
         "id": 67,
@@ -346,5 +346,41 @@
     {
         "id": 87,
         "name": "Zora Tunic"
+    },
+    {
+        "id": 88,
+        "name": "Kokiri Emerald"
+    },
+    {
+        "id": 89,
+        "name": "Goron Ruby"
+    },
+    {
+        "id": 90,
+        "name": "Zora Sapphire"
+    },
+    {
+        "id": 91,
+        "name": "Light Medallion"
+    },
+    {
+        "id": 92,
+        "name": "Forest Medallion"
+    },
+    {
+        "id": 93,
+        "name": "Fire Medallion"
+    },
+    {
+        "id": 94,
+        "name": "Water Medallion"
+    },
+    {
+        "id": 95,
+        "name": "Shadow Medallion"
+    },
+    {
+        "id": 96,
+        "name": "Spirit Medallion"
     }
 ]

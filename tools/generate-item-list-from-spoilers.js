@@ -5,12 +5,43 @@ let items = JSON.parse(fs.readFileSync('./data/examples/spoilers.json')).item_po
 let itemcount = 1;
 let bottlecount = 1;
 let finalObj = [];
+let bossRewards = [
+	'Kokiri Emerald',
+	'Goron Ruby',
+	'Zora Sapphire',
+	'Light Medallion',
+	'Forest Medallion',
+	'Fire Medallion',
+	'Water Medallion',
+	'Shadow Medallion',
+	'Spirit Medallion'
+];
 
-function getPItemName(name){
-	// Hookshot/Longshot
-	// Ocarina
-	// Dive Scale
-	// Gauntlets
+function getPItemName(name,num){
+	let betterNames = {
+		"Progressive Hookshot":[
+			"Hookshot",
+			"Longshot"
+		],
+		"Ocarina":[
+			"Fairy Ocarina",
+			"Ocarina of Time"
+		],
+		"Progressive Scale":[
+			"Silver Scale",
+			"Gold Scale"
+		],
+		"Progressive Strength Upgrade":[
+			"Goron Bracelet",
+			"Silver Gauntlets",
+			"Gold Gauntlets"
+		]
+	};
+	if(typeof betterNames[name] === 'undefined'){
+		return name;
+	}
+	name = betterNames[name][num];
+	return name;
 }
 
 _.each(items,function(n,i){
@@ -34,7 +65,7 @@ _.each(items,function(n,i){
 			}
 			finalObj.push({
 				id:itemcount,
-				name:i
+				name:getPItemName(i,j)
 			});
 
 			itemcount++;
@@ -49,7 +80,15 @@ _.each(items,function(n,i){
 			itemcount++;
 		}
 	}
-	
 });
+
+_.each(bossRewards,function(r){
+	finalObj.push({
+		id:itemcount,
+		name:r
+	});
+
+	itemcount++;
+})
 
 console.log(JSON.stringify(finalObj));

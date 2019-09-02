@@ -46,7 +46,8 @@
         "to":9,
         "nick": "Kokiri Forest -> Lost Woods Bridge From Forest",
         "lat": -69.24057767769871,
-        "lng": 32.3876939713955
+        "lng": 32.3876939713955,
+        "required_items":[88]
     },
     {
         "from":1,

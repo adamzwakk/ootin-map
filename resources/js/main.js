@@ -24,6 +24,7 @@ $(document).ready(function(){
 
  	function renderEntrances(ent){
 	 	_.each(ent,function(e){
+	 		let rItems = [];
  			if(typeof e.from !== 'undefined'){
  				if(typeof e.nick !== 'undefined'){
  					title = e.nick+' ('+e.from+' -> '+e.to+')';
@@ -37,8 +38,25 @@ $(document).ready(function(){
  			} else {
 	 			return;
  			}
+
+ 			if(typeof e.required_items !== 'undefined'){
+ 				_.each(e.required_items,function(r){
+ 					rItems.push(_.findWhere(items,{id:r}).name);
+ 				})
+ 			}
+
  			var m = L.marker([e.lat, e.lng],{title:title});
- 			m.bindPopup(title).openPopup();
+
+ 			let popupContent = $('<div></div>');
+ 			popupContent.append('<p>'+title+'</p>');
+ 			if(rItems.length){
+ 				popupContent.append('<div>Required Items:</div><ul class="required_items"></ul>')
+ 				_.each(rItems,function(r){
+ 					popupContent.find('.required_items').append('<li>'+r+'</li>')
+ 				});
+ 			}
+
+ 			m.bindPopup(popupContent[0]).openPopup();
  			m.addTo(map);
  			activeMarkers.push(m);
  		});

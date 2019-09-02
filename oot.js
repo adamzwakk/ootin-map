@@ -16,7 +16,8 @@ console.log('Found '+places.length+' places');
 var entrances = JSON.parse(fs.readFileSync('./data/entrances.json','utf8'));
 entrances = parseEntrances(entrances,places);
 console.log('Parsed '+entrances.length+' entrances');
-
+var items = JSON.parse(fs.readFileSync('./data/items.json','utf8'));
+console.log('Found '+items.length+' items');
 
 function parseEntrances(entrances,places){
 	let sorted_e = [];
@@ -41,7 +42,8 @@ function parseEntrances(entrances,places){
 app.get('/', (req, res) => {
 	return res.render('index',{
 		places:places,
-		entrances:entrances
+		entrances:entrances,
+		items:items
 	});
 });
 
@@ -73,6 +75,9 @@ app.post('/spoiler-upload', (req, res) => {
 					"lat":dest.lat,
 					"lng":dest.lng
 				}
+			}
+			if(typeof source.required_items !== 'undefined'){
+				ob.required_items = source.required_items
 			}
 			spoilers_result.push(ob);
 		} else {
