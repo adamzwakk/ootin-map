@@ -382,5 +382,13 @@
     {
         "id": 96,
         "name": "Spirit Medallion"
+    },
+    {
+        "id": 97,
+        "name": "Master Sword"
+    },
+    {
+        "id":98,
+        "name":"Zeldas Letter"
     }
 ]

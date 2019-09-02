@@ -35,7 +35,10 @@ html
 								option(value=p.id)= p.name
 				a(href='#',class='start-route') Go
 				a(href='#',class='clear-route') Clear
+				h6 Route:
 				ul(class='route-table')
+				h6 Required Items:
+				ul(class='items-table')
 		script.
 			let vanillaEntrances = !{JSON.stringify(entrances)};
 			let entrances = vanillaEntrances;

@@ -14,7 +14,9 @@ let bossRewards = [
 	'Fire Medallion',
 	'Water Medallion',
 	'Shadow Medallion',
-	'Spirit Medallion'
+	'Spirit Medallion',
+	'Master Sword',
+	'Zeldas Letter'
 ];
 
 function getPItemName(name,num){

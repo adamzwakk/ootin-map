@@ -54,13 +54,15 @@
         "to":11,
         "nick": "Outside Deku Tree -> Deku Tree Lobby",
         "lat": -66.94727435155409,
-        "lng": 67.28027343750001
+        "lng": 67.28027343750001,
+        "required_items":[45,25]
     },
     {
         "from":1,
         "to":12,
         "lat": -67.08740303551195,
-        "lng": 39.140623211860664
+        "lng": 39.140623211860664,
+        "required_items":[81]
     },
     {
         "from":13,
@@ -333,7 +335,8 @@
         "to":2,
         "nick": "Goron City Woods Warp -> Lost Woods",
         "lat": 66.26243404258382,
-        "lng": 60.43212980031968
+        "lng": 60.43212980031968,
+        "required_items":[64]
     },
     {
         "from":29,
@@ -545,7 +548,8 @@
         "to":25,
         "nick": "Kakariko Village Behind Gate -> Death Mountain",
         "lat": 17.867233029985197,
-        "lng": 73.76953214406969
+        "lng": 73.76953214406969,
+        "required_items":[98]
     },
     {
         "from":26,
@@ -779,7 +783,8 @@
         "to":99,
         "nick": "Sacred Forest Meadow -> Forest Temple Lobby",
         "lat": -72.76189430622868,
-        "lng": 106.93359419703484
+        "lng": 106.93359419703484,
+        "required_items":[60]
     },
     {
         "from":95,

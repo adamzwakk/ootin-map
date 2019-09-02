@@ -112,6 +112,7 @@ $(document).ready(function(){
 		});
 		
 		let finalroute = [];
+		let finalitems = [];
 		let vertices = compileVertices(graph);
 		let route = findRoute(vertices[place1],vertices[place2]).route;
 
@@ -141,10 +142,30 @@ $(document).ready(function(){
 			});
 			activeRoute.push(line);
 
-			$('.route-table').append('<li>'+_.findWhere(places,{id:s}).name+' -> '+_.findWhere(places,{id:d}).name+"</li>")
+			if(typeof frome.required_items !== 'undefined'){
+				_.each(frome.required_items,function(ri){
+					let i = _.findWhere(items,{id:ri});
+					if(!finalitems.includes(i.name)){
+						finalitems.push(i.name);
+					}
+				});
+			}
 
+			if(typeof toe.required_items !== 'undefined'){
+				_.each(toe.required_items,function(ri){
+					let i = _.findWhere(items,{id:ri});
+					if(!finalitems.includes(i.name)){
+						finalitems.push(i.name);
+					}
+				});
+			}
+
+			$('.route-table').append('<li>'+_.findWhere(places,{id:s}).name+' -> '+_.findWhere(places,{id:d}).name+"</li>")
 			lastpath = toe;
 		}
+		_.each(finalitems,function(ri){
+			$('.items-table').append('<li>'+ri+'</li>')
+		});
 		toggleMarkers(true);
 		togglePaths(true);
  	}
