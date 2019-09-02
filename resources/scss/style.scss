@@ -1,0 +1,11 @@
+@import 'compass/reset';
+
+html, body, #map{
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+			
+.leaflet-container {
+	background: #000;
+}

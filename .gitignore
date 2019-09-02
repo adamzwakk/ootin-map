@@ -7,3 +7,4 @@ public/images/grid/**/*.jpg
 public/js/*.js
 public/css/*.css
 public/css/images/*.png
+.sass-cache/

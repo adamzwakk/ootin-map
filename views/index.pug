@@ -6,16 +6,14 @@ html
 		script(src='./js/jquery.min.js')
 		script(src='./js/dijkstra.js')
 
-		style.
-			#mapid { width:1920px; height:1080px; }
-			.leaflet-container {
-				background: #000;
-			}
+		link(rel='stylesheet', href='./css/style.css')
 	body
-		div(id='mapid')
+		div(id='map')
 		script.
 			let entrances = !{JSON.stringify(entrances)};
 			let places = !{JSON.stringify(places)};
+		script.
+			
 			let activeNavLines = [];
 
 			$(document).ready(function(){
@@ -23,11 +21,11 @@ html
 				    async: false
 				});
 
-			 	var map = L.map('mapid', {
+			 	var map = L.map('map', {
 			 		minZoom:0,
 			 		maxZoom: 7,
 					zoom: 2,
-			 		center: [-70,120],
+			 		center: [-12,0],
 			 	});
 			 	L.tileLayer('./images/grid/{z}/{x}/{y}.jpg',{noWrap:true}).addTo(map);
 
@@ -135,4 +133,4 @@ html
 			 	renderEntrances(entrances);
 			 	renderPaths(entrances);
 			 	let route = findPath(108,106);
-			})
+			});
