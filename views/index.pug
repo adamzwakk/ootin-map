@@ -52,16 +52,23 @@ html
 			 			}
 			 			var m = L.marker([e.lat, e.lng],{title:title});
 			 			m.bindPopup(title).openPopup();
-			 			m.addTo(map);
+			 			//m.addTo(map);
 			 		});
 			 	}
 
 			 	function renderPaths(ent){
 			 		let oneways = [];
 			 		_.each(ent,function(e){
-
 			 			let frome = e;
-			 			let toe = _.findWhere(ent,{to:frome.from,from:frome.to});
+			 			let toe = {};
+			 			let linecolor = 'red';
+
+			 			if(typeof frome.oneway !== 'undefined' && typeof frome.extra_to !== 'undefined'){
+							toe = frome.extra_to;
+							linecolor = 'yellow';
+			 			} else {
+			 				toe = _.findWhere(ent,{to:frome.from,from:frome.to});
+			 			}
 			 			if(typeof toe == 'undefined'){
 							console.log('Could not find exit for: '+frome.from+' -> '+frome.to);
 			 				return;
@@ -72,7 +79,7 @@ html
 			 				//return;
 			 			}
 
-						let line = L.polyline([[frome.lat,frome.lng],[toe.lat,toe.lng]],{color:'red'}).addTo(map);
+						let line = L.polyline([[frome.lat,frome.lng],[toe.lat,toe.lng]],{color:linecolor}).addTo(map);
 						oneways.push(toe.to+'x'+toe.from);
 						activeNavLines.push(line);
 			 		});

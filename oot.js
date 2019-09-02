@@ -50,12 +50,22 @@ app.get('/spoiler-test', (req, res) => {
 		let dest = {};
 		if(typeof d === 'object'){
 			dest = _.findWhere(sorted_e,{nick:d.from+' -> '+d.region});
-			spoilers_result.push({
+			let ob = {
+				from_name:source.nick,
+				to_name:dest.nick,
 				from:source.from,
 				to:dest.to,
 				lat:source.lat,
 				lng:source.lng
-			});
+			};
+			if(typeof source.oneway !== 'undefined'){
+				ob.oneway = true;
+				ob.extra_to = {
+					"lat":dest.lat,
+					"lng":dest.lng
+				}
+			}
+			spoilers_result.push(ob);
 		} else {
 			let did = 0;
 			dest = _.findWhere(places,{name:d});
