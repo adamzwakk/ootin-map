@@ -1,9 +1,11 @@
 html
 	head
 		link(rel='stylesheet', href='./css/leaflet.css')
+		link(rel='stylesheet', href='./css/selectize.css')
 		script(src='./js/leaflet.js')
 		script(src='./js/underscore-min.js')
 		script(src='./js/jquery.min.js')
+		script(src='./js/selectize.min.js')
 		script(src='./js/dijkstra.js')
 
 		link(rel='stylesheet', href='./css/style.css')
@@ -51,6 +53,6 @@ html
 					div(class='entranceTitle')
 					div(class='toEntrance')
 						select
-							each p in places
-								if typeof p.name !== 'undefined'
-									option(value=p.id)= p.name
+							each e,index in entrances
+								if typeof e.nick !== 'undefined'
+									option(data-from=e.from,data-to=e.to,value=e.nick)= e.nick

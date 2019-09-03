@@ -1,11 +1,16 @@
 var gulp = require('gulp');
 
 gulp.task('default', function() {
-	var extCss = gulp.src(['./node_modules/leaflet/dist/leaflet.css']).pipe(gulp.dest('public/css'));
+	var extCss = gulp.src([
+		'./node_modules/leaflet/dist/leaflet.css',
+		'./node_modules/selectize/dist/css/selectize.css']).
+	pipe(gulp.dest('public/css'));
+
 	var extJS = gulp.src([
 		'./node_modules/leaflet/dist/leaflet.js',
 		'./node_modules/underscore/underscore-min.js',
 		'./node_modules/jquery/dist/jquery.min.js',
+		'./node_modules/selectize/dist/js/standalone/selectize.min.js',
 		'./resources/js/dijkstra.js'])
 	.pipe(gulp.dest('./public/js'));
 

@@ -49,9 +49,6 @@ $(document).ready(function(){
 
  			let popupContent = $('#entrance-marker-popup-template').clone().addClass('popup-marker').removeAttr('id');
  			popupContent.find('.entranceTitle').html(title);
- 			popupContent.find('.toEntrance select').attr('data-from',e.from);
- 			popupContent.find('.toEntrance select').attr('data-to',e.to);
- 			popupContent.find('.toEntrance select option[value="'+e.to+'"]').attr('selected','selected');
  			if(rItems.length){
  				popupContent.append('<div>Required Items:</div><ul class="required_items"></ul>')
  				_.each(rItems,function(r){
@@ -59,7 +56,45 @@ $(document).ready(function(){
  				});
  			}
 
- 			m.bindPopup(popupContent[0]).openPopup();
+	 		let popup = L.popup().setLatLng([e.lat,e.lng]).setContent(popupContent[0]);
+
+ 			m.bindPopup(popup).openPopup().on('popupopen',function(pop){
+ 				let content = $(pop.popup._contentNode);
+ 				content.find('select').selectize({
+	 				onInitialize: function () {
+				        var s = this;
+				        s.from = e.from;
+				        s.to = e.to;
+				        this.revertSettings.$children.each(function () {
+				            $.extend(s.options[this.value], $(this).data());
+				        });
+				        console.log(s)
+			    	},
+				    onChange: function (value) {
+				        var option = this.options[value];
+
+				        let s = this.from;
+				 		let oldd = this.to;
+				 		if(typeof option === 'undefined'){
+				 			return;
+				 		}
+
+				 		let from = option.from;
+				 		let to = option.to;
+
+				 		for (var i = 0; i < entrances.length; i++) {
+				 			let e = entrances[i];
+				 			if(e.from == s && e.to == oldd){
+				 				entrances[i].to = to;
+				 			} else if(e.from == oldd && e.to == s) {
+				 				entrances[i].from = from;
+				 			}
+				 		}
+				 		redraw();
+					 	config.vanilla = false;
+				    }
+		 		});
+ 			});
  			m.addTo(map);
  			activeMarkers.push(m);
  		});
@@ -291,21 +326,7 @@ $(document).ready(function(){
 	 	config.vanilla = true;
  	});
 
- 	$('#map').on('change','.popup-marker .toEntrance select',function(){
- 		let s = $(this).attr('data-from');
- 		let oldd = $(this).attr('data-to')
- 		let d = $(this).find('option:selected').val();
-
- 		for (var i = 0; i < entrances.length; i++) {
- 			let e = entrances[i];
- 			if(e.from == s && e.to == oldd){
- 				entrances[i].to = d;
- 				break;
- 			}
- 		}
- 		redraw();
-	 	config.vanilla = false;
- 	});
+ 	$('#route-planner select').selectize();
 
  	redraw();
 });
