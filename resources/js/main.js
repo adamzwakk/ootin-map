@@ -3,7 +3,7 @@ $(document).ready(function(){
 	let config = {
 		markers_hidden:false,
 		navlines_hidden:true,
-		vanilla:true
+		vanilla:false
 	}
 
 	let activeNavLines = [];
@@ -68,7 +68,6 @@ $(document).ready(function(){
 				        this.revertSettings.$children.each(function () {
 				            $.extend(s.options[this.value], $(this).data());
 				        });
-				        console.log(s)
 			    	},
 				    onChange: function (value) {
 				        var option = this.options[value];
@@ -82,16 +81,20 @@ $(document).ready(function(){
 				 		let from = option.from;
 				 		let to = option.to;
 
+				 		renderPath(from,to);
+
 				 		for (var i = 0; i < entrances.length; i++) {
 				 			let e = entrances[i];
 				 			if(e.from == s && e.to == oldd){
 				 				entrances[i].to = to;
-				 			} else if(e.from == oldd && e.to == s) {
+				 				continue;
+				 			}
+				 			if(e.from == oldd && e.to == s) {
 				 				entrances[i].from = from;
 				 			}
 				 		}
-				 		redraw();
-					 	config.vanilla = false;
+				 		config.vanilla = false;
+				 		config.navlines_hidden = true;					 	
 				    }
 		 		});
  			});
@@ -100,32 +103,38 @@ $(document).ready(function(){
  		});
  	}
 
+ 	function renderPath(from,to){
+ 		let frome = _.findWhere(entrances,{from:from,to:to});
+ 		let toe = {};
+ 		let linecolor = 'red';
+
+		if(typeof frome.oneway !== 'undefined' && typeof frome.extra_to !== 'undefined'){
+			toe = frome.extra_to;
+			linecolor = 'yellow';
+		} else {
+			toe = _.findWhere(entrances,{to:from,from:to});
+		}
+		if(typeof toe == 'undefined'){
+			console.log('Could not find exit for: '+frome.from+' -> '+frome.to);
+			return;
+		}
+
+ 		let line = L.polyline([[frome.lat,frome.lng],[toe.lat,toe.lng]],{color:linecolor}).addTo(map);
+		activeNavLines.push(line);
+ 	}
+
  	function renderPaths(ent){
  		let oneways = [];
+ 		_.each(activeNavLines,function(m){
+    		map.removeLayer(m)
+        });
  		_.each(ent,function(e){
- 			let frome = e;
- 			let toe = {};
- 			let linecolor = 'red';
-
- 			if(typeof frome.oneway !== 'undefined' && typeof frome.extra_to !== 'undefined'){
-				toe = frome.extra_to;
-				linecolor = 'yellow';
- 			} else {
- 				toe = _.findWhere(ent,{to:frome.from,from:frome.to});
- 			}
- 			if(typeof toe == 'undefined'){
-				console.log('Could not find exit for: '+frome.from+' -> '+frome.to);
+ 			if(oneways.includes(e.from+'x'+e.to)){
+ 				//console.log('Already plotted this line one way, skipping');
  				return;
  			}
-
- 			if(oneways.includes(frome.from+'x'+frome.to)){
- 				//console.log('Already plotted this line one way, skipping');
- 				//return;
- 			}
-
-			let line = L.polyline([[frome.lat,frome.lng],[toe.lat,toe.lng]],{color:linecolor});
-			oneways.push(toe.to+'x'+toe.from);
-			activeNavLines.push(line);
+ 			renderPath(e.from,e.to);
+ 			oneways.push(e.from+'x'+e.to);
  		});
  	}
 
@@ -315,18 +324,27 @@ $(document).ready(function(){
  		togglePaths(false);
  	});
 
- 	$('#sidebar #toggles .vanilla-reset').click(function(e){
+ 	$('#sidebar #toggles .reset').click(function(e){
+ 		e.preventDefault();
+ 		entrances = vanillaEntrances;
+ 		cleanSlate();
+ 		renderEntrances(entrances);
+	 	config.vanilla = false;
+ 	});
+
+ 	$('#sidebar #toggles .load-vanilla').click(function(e){
  		e.preventDefault();
  		if(config.vanilla){
- 			alert('Already looking at vanilla')
  			return;
  		}
+ 		config.vanilla = true;
  		entrances = vanillaEntrances;
- 		redraw();
-	 	config.vanilla = true;
+ 		renderEntrances(vanillaEntrances);
+ 		renderPaths(vanillaEntrances);
  	});
 
  	$('#route-planner select').selectize();
 
- 	redraw();
+ 	renderEntrances(entrances);
+ 	//renderPaths(entrances);
 });

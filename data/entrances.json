@@ -165,6 +165,7 @@
     },
     {
         "from":25,
+        "to":0,
         "nick": "Death Mountain Summit Owl Flight -> Kakariko Impa Ledge",
         "lat": 56.29215631294792,
         "lng": 66.21093839406969,
@@ -648,6 +649,7 @@
     },
     {
         "from":63,
+        "to":0,
         "nick": "Lake Hylia Owl Flight -> Hyrule Field",
         "lat": -78.10735546198414,
         "lng": -57.202146649360664,
