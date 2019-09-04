@@ -81,18 +81,20 @@ $(document).ready(function(){
 				 		let from = option.from;
 				 		let to = option.to;
 
-				 		renderPath(from,to);
+				 		let frome = getEntrancePair(s,oldd);
+				 		let toe = getEntrancePair(to,from);
+
+				 		renderPath(frome.from,toe.to,'red');
 
 				 		for (var i = 0; i < entrances.length; i++) {
 				 			let e = entrances[i];
 				 			if(e.from == s && e.to == oldd){
-				 				entrances[i].to = to;
-				 				continue;
-				 			}
-				 			if(e.from == oldd && e.to == s) {
-				 				entrances[i].from = from;
+				 				entrances[i].to = s;
+				 			} else if(e.from == oldd && e.to == s) {
+				 				entrances[i].from = to;
 				 			}
 				 		}
+				 		//console.log(entrances);
 				 		config.vanilla = false;
 				 		config.navlines_hidden = true;					 	
 				    }
@@ -103,21 +105,27 @@ $(document).ready(function(){
  		});
  	}
 
- 	function renderPath(from,to){
+ 	function getEntrancePair(from,to){
  		let frome = _.findWhere(entrances,{from:from,to:to});
  		let toe = {};
- 		let linecolor = 'red';
 
 		if(typeof frome.oneway !== 'undefined' && typeof frome.extra_to !== 'undefined'){
 			toe = frome.extra_to;
-			linecolor = 'yellow';
 		} else {
 			toe = _.findWhere(entrances,{to:from,from:to});
 		}
+
 		if(typeof toe == 'undefined'){
 			console.log('Could not find exit for: '+frome.from+' -> '+frome.to);
-			return;
+			//return;
 		}
+
+		return {from:frome,to:toe};
+ 	}
+
+ 	function renderPath(from,to,linecolor){
+ 		let frome = from;
+ 		let toe = to;
 
  		let line = L.polyline([[frome.lat,frome.lng],[toe.lat,toe.lng]],{color:linecolor}).addTo(map);
 		activeNavLines.push(line);
@@ -129,11 +137,25 @@ $(document).ready(function(){
     		map.removeLayer(m)
         });
  		_.each(ent,function(e){
+ 			let pair = getEntrancePair(e.from,e.to);
+ 			let frome = pair.from;
+ 			let toe = pair.to;
+ 			let linecolor = 'red'
+
+ 			if(typeof frome.oneway !== 'undefined'){
+				toe = frome.extra_to;
+				linecolor = 'yellow';
+			}
+			if(typeof toe == 'undefined'){
+				console.log('Could not find exit for: '+frome.from+' -> '+frome.to);
+				return;
+			}
  			if(oneways.includes(e.from+'x'+e.to)){
  				//console.log('Already plotted this line one way, skipping');
  				return;
  			}
- 			renderPath(e.from,e.to);
+ 			//console.log(toe);
+ 			renderPath(e,toe,linecolor);
  			oneways.push(e.from+'x'+e.to);
  		});
  	}
