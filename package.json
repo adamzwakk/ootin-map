@@ -4,7 +4,7 @@
     "express-fileupload": "^1.1.5",
     "jquery": "^3.4.1",
     "leaflet": "^1.5.1",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "selectize": "^0.12.6",
     "underscore": "^1.9.1"
   },
